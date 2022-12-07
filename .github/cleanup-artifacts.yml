@@ -1,0 +1,15 @@
+name: Cleanup Artifacts
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  cleanupArtifacts:
+    name: Cleanup Artifacts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Perform Cleanup
+        uses: kolpav/purge-artifacts-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          expire-in: 0days
