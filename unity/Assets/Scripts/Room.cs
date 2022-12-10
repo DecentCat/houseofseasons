@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-[ExecuteInEditMode]
+//[ExecuteInEditMode]
 public class Room : MonoBehaviour
 {
     public enum RoomType
@@ -38,7 +38,7 @@ public class Room : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _roomtilemaps = GetComponentsInChildren<RoomTilemap>();
+        
     }
 
     // Update is called once per frame
@@ -50,10 +50,10 @@ public class Room : MonoBehaviour
     // called when value in inspector changes
     void OnValidate()
     {
-        Start();
+        _roomtilemaps = GetComponentsInChildren<RoomTilemap>();
         for(int i = 0;i < _roomtilemaps.Length;i++)
         {
-            _roomtilemaps[i].UpdateTiles();
+            _roomtilemaps[i].UpdateTiles(_type, _doorpositions);
         }
     }
 }
