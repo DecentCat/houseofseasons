@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Movement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     // Player stats
     public int health = 100;
@@ -14,7 +14,7 @@ public class Player_Movement : MonoBehaviour
     public GameObject projectilePrefab;
     public Transform projectileSpawn;
 
-    private Vector2 movementDirection = Vector2.zero;
+    private Vector2 movementDirection = new Vector2(0, -1);
     private Vector2 facingDirection = Vector2.zero;
     private float nextShot = 0f;
 

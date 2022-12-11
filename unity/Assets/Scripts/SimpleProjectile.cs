@@ -6,7 +6,7 @@ public class SimpleProjectile : MonoBehaviour
 {
     public float movementSpeed = 10f;
     public int dealtDamage = 3;
-    public Vector2 movementDirection = new Vector2(0, 0);
+    public Vector2 movementDirection = new Vector2(0, -1);
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,10 @@ public class SimpleProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Destroy(gameObject);
+        if (collision.gameObject.name == "Tilemap")
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void SetDirection(Vector2 direction)
