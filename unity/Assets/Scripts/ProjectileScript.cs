@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SimpleProjectile : MonoBehaviour
+public class ProjectileScript : MonoBehaviour
 {
     public float movementSpeed = 10f;
     public int dealtDamage = 3;
