@@ -11,12 +11,16 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D rb;
     public Animator animator;
-    public GameObject projectilePrefab;
-    public Transform projectileSpawn;
 
     private Vector2 movementDirection = new Vector2(0, -1);
     private Vector2 facingDirection = Vector2.zero;
-    private float nextShot = 0f;
+
+    private WeaponScript primaryWeapon;
+
+    private void Awake()
+    {
+        primaryWeapon = gameObject.transform.GetChild(0).GetComponent<WeaponScript>();
+    }
 
     void Update()
     {
@@ -32,10 +36,9 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Vertical", movementDirection.y);
         animator.SetFloat("Speed", movementDirection.sqrMagnitude);
 
-        if(Input.GetButton("Fire1") && (Time.time >= nextShot))
+        if(Input.GetButton("Fire1"))
         {
-            nextShot = Time.time + shotBuffer;
-            Shoot();
+            primaryWeapon.Shoot(facingDirection);
         }
 
     }
@@ -43,15 +46,5 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movementDirection.normalized * movementSpeed * Time.fixedDeltaTime);
-    }
-
-
-    void Shoot()
-    {
-        GameObject singleBullet = Instantiate(projectilePrefab, projectileSpawn.position, projectileSpawn.rotation) as GameObject;
-        if (facingDirection != Vector2.zero)
-        {
-            singleBullet.SendMessage("SetDirection", facingDirection);
-        }
     }
 }
