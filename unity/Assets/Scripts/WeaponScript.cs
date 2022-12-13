@@ -60,7 +60,7 @@ public class WeaponScript : MonoBehaviour
             shot.transform.position = transform.position;
 
             // set properties of shot
-            ProjectileScript shotScript = shot.GetComponent<ProjectileScript>();
+            ShotScript shotScript = shot.GetComponent<ShotScript>();
             if (shot != null)
             {
                 shotScript.movementDirection = Rotate(dir, Random.Range(bulletSpread/(-2f), bulletSpread/2f));
