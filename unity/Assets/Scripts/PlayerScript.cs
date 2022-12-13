@@ -23,6 +23,8 @@ public class PlayerScript : MonoBehaviour
     private List<WeaponScript> weapons;
     private int weapon_index = 0;
 
+    private LaserScript laser;
+
     private void Awake()
     {
         // init weapons
@@ -35,6 +37,9 @@ public class PlayerScript : MonoBehaviour
             secondaryWeapon,
             tertiaryWeapon
         };
+
+        // init laser
+        laser = gameObject.transform.Find("Laser").GetComponent<LaserScript>();
     }
 
     void Update()
@@ -47,6 +52,7 @@ public class PlayerScript : MonoBehaviour
             facingDirection = movementDirection.normalized;
         }
 
+        // scroll through weapon roster
         if (Input.GetAxis("Mouse ScrollWheel") != 0)
         {
             if (Input.GetAxis("Mouse ScrollWheel") > 0f)
@@ -63,9 +69,20 @@ public class PlayerScript : MonoBehaviour
         animator.SetFloat("Vertical", movementDirection.y);
         animator.SetFloat("Speed", movementDirection.sqrMagnitude);
 
-        if(Input.GetButton("Fire1"))
+        // fire equipped weapon
+        if (Input.GetButton("Fire1"))
         {
             weapons[weapon_index].Shoot(facingDirection);
+        }
+
+        // fire laser
+        if (Input.GetButton("Fire2"))
+        {
+            laser.Shoot();
+        }
+        else if (Input.GetButtonUp("Fire2"))
+        {
+            laser.StopShooting();
         }
 
     }
