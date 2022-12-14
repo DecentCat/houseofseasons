@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileScript : MonoBehaviour
+public class ShotScript : MonoBehaviour
 {
     public float movementSpeed = 10f;
     public int dealtDamage = 3;
@@ -13,7 +13,6 @@ public class ProjectileScript : MonoBehaviour
     {
         Destroy(gameObject, 7);
     }
-
 
     private void FixedUpdate()
     {

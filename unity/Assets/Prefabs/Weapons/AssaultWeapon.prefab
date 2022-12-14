@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4735441422055985589}
   - component: {fileID: -1900792966466951405}
   m_Layer: 6
-  m_Name: BasicWeapon
+  m_Name: AssaultWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d76c63ad194b854182c4c3c20983637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotPrefab: {fileID: 8329337649942517644, guid: f21988c3c2bd5154ab59dc8a9533a19e, type: 3}
-  shootingRate: 2
-  bulletSpread: 0
+  shotPrefab: {fileID: 8329337649942517644, guid: 1c32b1cbd49060c4db5c8b403d88b10f, type: 3}
+  shootingRate: 7.5
+  bulletSpread: 10
