@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8216170217620569725}
   - component: {fileID: 4378374486458047988}
   - component: {fileID: 4614490904865872888}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,23 +101,14 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 0.25949287
+        time: 0.5013987
+        value: 0.24050882
         inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.9971989
-        value: 0.13924405
-        inSlope: -0.48151076
-        outSlope: -0.48151076
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.1713483
-        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4

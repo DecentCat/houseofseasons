@@ -177,10 +177,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicWeapon
       objectReference: {fileID: 0}
-    - target: {fileID: 2890040985211317996, guid: 298599c3b8ce1d74f99a255a47d77f65, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 4735441422055985589, guid: 298599c3b8ce1d74f99a255a47d77f65, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -239,38 +235,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2039969185222439995}
     m_Modifications:
-    - target: {fileID: 4614490904865872888, guid: eb240741ba4315b41a2b142403dc707f, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4614490904865872888, guid: eb240741ba4315b41a2b142403dc707f, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
-      value: 0.5013987
-      objectReference: {fileID: 0}
-    - target: {fileID: 4614490904865872888, guid: eb240741ba4315b41a2b142403dc707f, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].time
-      value: 0.99158365
-      objectReference: {fileID: 0}
-    - target: {fileID: 4614490904865872888, guid: eb240741ba4315b41a2b142403dc707f, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
-      value: 0.24050882
-      objectReference: {fileID: 0}
-    - target: {fileID: 4614490904865872888, guid: eb240741ba4315b41a2b142403dc707f, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
-      value: 0.3607559
-      objectReference: {fileID: 0}
-    - target: {fileID: 4614490904865872888, guid: eb240741ba4315b41a2b142403dc707f, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].inSlope
-      value: 0.6527814
-      objectReference: {fileID: 0}
-    - target: {fileID: 4614490904865872888, guid: eb240741ba4315b41a2b142403dc707f, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].inWeight
-      value: 0.1271072
-      objectReference: {fileID: 0}
-    - target: {fileID: 4614490904865872888, guid: eb240741ba4315b41a2b142403dc707f, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].outSlope
-      value: 0.6527814
-      objectReference: {fileID: 0}
     - target: {fileID: 8216170217620569725, guid: eb240741ba4315b41a2b142403dc707f, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -319,10 +283,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Laser
       objectReference: {fileID: 0}
-    - target: {fileID: 8572501273955996261, guid: eb240741ba4315b41a2b142403dc707f, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb240741ba4315b41a2b142403dc707f, type: 3}
 --- !u!4 &4033562604753414677 stripped
@@ -340,10 +300,6 @@ PrefabInstance:
     - target: {fileID: 2890040985211317996, guid: c23c4cf927ec1b846a23d96a6e16ffa6, type: 3}
       propertyPath: m_Name
       value: HeavyWeapon
-      objectReference: {fileID: 0}
-    - target: {fileID: 2890040985211317996, guid: c23c4cf927ec1b846a23d96a6e16ffa6, type: 3}
-      propertyPath: m_Layer
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4735441422055985589, guid: c23c4cf927ec1b846a23d96a6e16ffa6, type: 3}
       propertyPath: m_RootOrder
@@ -406,10 +362,6 @@ PrefabInstance:
     - target: {fileID: 2890040985211317996, guid: a2587812d502a714ab2b1292aa9446dd, type: 3}
       propertyPath: m_Name
       value: AssaultWeapon
-      objectReference: {fileID: 0}
-    - target: {fileID: 2890040985211317996, guid: a2587812d502a714ab2b1292aa9446dd, type: 3}
-      propertyPath: m_Layer
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4735441422055985589, guid: a2587812d502a714ab2b1292aa9446dd, type: 3}
       propertyPath: m_RootOrder
