@@ -72,7 +72,10 @@ public class PlayerScript : MonoBehaviour
         // fire equipped weapon
         if (Input.GetButton("Fire1"))
         {
-            weapons[weapon_index].Shoot(facingDirection);
+            var currentWeapon = weapons[weapon_index];
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 direction = mousePos - currentWeapon.transform.position;
+            currentWeapon.Shoot(direction.normalized);
         }
 
         // fire laser

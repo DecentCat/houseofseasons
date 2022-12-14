@@ -28,7 +28,7 @@ public class LaserScript : MonoBehaviour
 
         //transform.rotation = Quaternion.Euler(0, 0, angle - 90);
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, maxRange);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, maxRange, layersToHit);
         Debug.DrawLine(transform.position, hit.point);
         lineRenderer.SetPosition(0, transform.position);
         lineRenderer.SetPosition(1, hit.point);
