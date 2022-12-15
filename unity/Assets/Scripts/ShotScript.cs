@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ShotScript : MonoBehaviour
 {
+    public bool enemyProjectile;
     public float movementSpeed = 10f;
     public int dealtDamage = 3;
     public Vector2 movementDirection = new Vector2(0, -1);
@@ -26,6 +27,18 @@ public class ShotScript : MonoBehaviour
         if (collision.gameObject.name == "Tilemap")
         {
             Destroy(gameObject);
+        }
+
+        if (!enemyProjectile && collision.gameObject.tag == "Enemy")
+        {
+            Destroy(gameObject);
+            collision.gameObject.GetComponent<EnemyBehavior>().TakeDamage(dealtDamage, movementDirection);
+        }
+
+        if (enemyProjectile && collision.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+            collision.gameObject.GetComponent<PlayerScript>().TakeDamage(dealtDamage, movementDirection);
         }
     }
 

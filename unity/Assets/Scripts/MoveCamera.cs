@@ -11,7 +11,10 @@ public class MoveCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 pos = new Vector3(elementOfInterest.position.x, elementOfInterest.position.y, cameraDistance);
-        transform.position = Vector3.Slerp(transform.position, pos, movementSpeed * Time.deltaTime);
+        if(elementOfInterest != null)
+        {
+            Vector3 pos = new Vector3(elementOfInterest.position.x, elementOfInterest.position.y, cameraDistance);
+            transform.position = Vector3.Slerp(transform.position, pos, movementSpeed * Time.deltaTime);
+        }
     }
 }
