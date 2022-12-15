@@ -1896,6 +1896,7 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+  m_UseDelaunayMesh: 0
 --- !u!114 &5118683045135376223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1910,10 +1911,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _setOnNotPosition: 0
   _tiles:
-  - {fileID: 11400000, guid: 8870a1c73cf500b4bbcf858b17ac5467, type: 2}
-  - {fileID: 11400000, guid: 237327f0eb6276249b151da5de069cae, type: 2}
-  - {fileID: 11400000, guid: 4cd87c90fd9bd494f8111e7c33148b35, type: 2}
-  - {fileID: 11400000, guid: 6e9cd0b9ce92cd144af38158cfdd6cac, type: 2}
+  - {fileID: 11400000, guid: 4328e886f9ae65d46aba6ff2b1d95610, type: 2}
+  - {fileID: 11400000, guid: 32ccd2c9647064142b3050a5d78bf2c9, type: 2}
+  - {fileID: 11400000, guid: 0db94df0900852b4f854278bb11a35c0, type: 2}
+  - {fileID: 11400000, guid: 2fa8af95d758ac14b96db687bc104882, type: 2}
 --- !u!1 &5118683046384908282
 GameObject:
   m_ObjectHideFlags: 0
@@ -2161,7 +2162,7 @@ Transform:
   - {fileID: 5118683045135376219}
   - {fileID: 5118683046384908281}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5118683046855437514
 MonoBehaviour:
