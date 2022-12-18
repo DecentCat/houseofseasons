@@ -1908,7 +1908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70de3da0b6ff7ba4486bcffd1e4e94e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _setOnNotPosition: 0
+  _isTriggerTilemap: 0
   _tiles:
   - {fileID: 11400000, guid: 8870a1c73cf500b4bbcf858b17ac5467, type: 2}
   - {fileID: 11400000, guid: 237327f0eb6276249b151da5de069cae, type: 2}
@@ -1926,6 +1926,7 @@ GameObject:
   - component: {fileID: 5118683046384908287}
   - component: {fileID: 5118683046384908280}
   - component: {fileID: 5118683046384908286}
+  - component: {fileID: 4771364743111838628}
   m_Layer: 0
   m_Name: TriggerTilemap
   m_TagString: Untagged
@@ -1980,8 +1981,8 @@ Tilemap:
   - first: {x: 8, y: -1, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 3
-      m_TileSpriteIndex: 3
+      m_TileIndex: 2
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1990,8 +1991,8 @@ Tilemap:
   - first: {x: -1, y: 3, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 2
-      m_TileSpriteIndex: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -2004,18 +2005,18 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 9e051fc31303d754da32cf52bb9b5ad7, type: 2}
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: e4d1b1cabb9b545478bbad78b68749d2, type: 2}
-  - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: f1a1f0f9251cc2049a700d1fc18457b3, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: e4d1b1cabb9b545478bbad78b68749d2, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 1
     m_Data: {fileID: 54857819, guid: cd46101ca714463449ba9798fdd97cc4, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 1187425000, guid: cd46101ca714463449ba9798fdd97cc4, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 1311263330, guid: cd46101ca714463449ba9798fdd97cc4, type: 3}
-  - m_RefCount: 1
     m_Data: {fileID: -1665265659, guid: cd46101ca714463449ba9798fdd97cc4, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 1311263330, guid: cd46101ca714463449ba9798fdd97cc4, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 4
     m_Data:
@@ -2123,12 +2124,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70de3da0b6ff7ba4486bcffd1e4e94e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _setOnNotPosition: 1
+  _isTriggerTilemap: 1
   _tiles:
   - {fileID: 11400000, guid: cde62a2db5c3b27468c2055f606c69ae, type: 2}
   - {fileID: 11400000, guid: 9e051fc31303d754da32cf52bb9b5ad7, type: 2}
   - {fileID: 11400000, guid: f1a1f0f9251cc2049a700d1fc18457b3, type: 2}
   - {fileID: 11400000, guid: e4d1b1cabb9b545478bbad78b68749d2, type: 2}
+--- !u!19719996 &4771364743111838628
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5118683046384908282}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1 &5118683046855437364
 GameObject:
   m_ObjectHideFlags: 0
@@ -2186,3 +2203,4 @@ MonoBehaviour:
   - {x: -1, y: -5}
   - {x: 8, y: -1}
   - {x: -1, y: 3}
+  _playerscript: {fileID: 0}

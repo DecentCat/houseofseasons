@@ -9,7 +9,7 @@ public class MoveCamera : MonoBehaviour
     public float cameraDistance = -20f;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(elementOfInterest != null)
         {
