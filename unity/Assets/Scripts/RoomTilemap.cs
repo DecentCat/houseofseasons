@@ -42,7 +42,7 @@ public class RoomTilemap : MonoBehaviour
             }
             else
             {
-                Debug.Log("[RoomTilemap] Setting Tile at Position " + new Vector3Int(pos.x, pos.y, 0));
+                //Debug.Log("[RoomTilemap] Setting Tile at Position " + new Vector3Int(pos.x, pos.y, 0));
                 toSet = _tiles[3-idx];
             }
             _tilemap.SetTile(new Vector3Int(pos.x, pos.y, 0), toSet);
