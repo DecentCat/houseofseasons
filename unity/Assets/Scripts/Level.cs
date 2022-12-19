@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Level : MonoBehaviour
 {
+    [SerializeField] private Camera _camera;
+
     // dynamically adjusted based on Room position in Level
     private Room[,] _rooms;
     private Room[] _allRooms;
@@ -21,6 +24,71 @@ public class Level : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public Tuple<int,int> FindRoomPosition(Room room)
+    {
+        for(int i = 0;i < _rooms.GetLength(0);i++)
+        {
+            for(int j = 0;j < _rooms.GetLength(1);j++)
+            {
+                if (_rooms[i, j] == room)
+                {
+                    return Tuple.Create(i, j);
+                }
+            }
+        }
+        return null;
+    }
+
+    public void SetCameraParent(Room playerRoom, int direction)
+    {
+        Debug.Log("SetCameraParent " + direction);
+        Tuple<int,int> pos = FindRoomPosition(playerRoom);
+        PlayerScript playerScript = playerRoom.playerscript;
+        int y = pos.Item1;
+        int x = pos.Item2;
+        Vector2 newPos = new Vector2(playerScript.transform.position.y, playerScript.transform.position.x);
+        int oppositeDir = -1;
+        Vector2 movVec = Vector2.zero;
+        switch(direction)
+        {
+            case 0: // WEST
+                x -= 1;
+                oppositeDir = 2;
+                movVec = Vector2.left;
+                break;
+            case 1: // SOUTH
+                y -= 1;
+                oppositeDir = 3;
+                movVec = Vector2.down;
+                break;
+            case 2: // EAST
+                x += 1;
+                oppositeDir = 0;
+                movVec = Vector2.right;
+                break;
+            case 3: // NORTH
+                y += 1;
+                oppositeDir = 1;
+                movVec = Vector2.up;
+                break;
+        }
+        Room newRoom = _rooms[y, x];
+        Vector2 doorPos = newRoom.doorpositions[oppositeDir];
+        Vector2 newPlayerPos = doorPos + (movVec * 0.5f);
+        newPlayerPos.x += 0.5f;
+        newPlayerPos.y += 0.5f;
+        Debug.Log("Moved in direction " + newPlayerPos + ", " + movVec);
+
+        playerScript.transform.parent = newRoom.transform;
+        playerScript.transform.localPosition = newPlayerPos;
+        newRoom.playerscript = playerScript;
+        playerRoom.playerscript = null;
+
+        Vector3 prevLocalPos = _camera.transform.localPosition;
+        _camera.transform.parent = newRoom.transform;
+        _camera.transform.localPosition = prevLocalPos;
     }
 
     // called when value in inspector changes
