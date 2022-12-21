@@ -24,7 +24,8 @@ public class ShotScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Tilemap")
+        PlayerScript playerScript;
+        if (!collision.gameObject.TryGetComponent<PlayerScript>(out playerScript))
         {
             Destroy(gameObject);
         }
