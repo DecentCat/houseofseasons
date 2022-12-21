@@ -15,8 +15,9 @@ public class PlayerScript : MonoBehaviour
     private Vector2 facingDirection = Vector2.zero;
 
     private WeaponScript primaryWeapon;
-    private WeaponScript secondaryWeapon;
-    private WeaponScript tertiaryWeapon;
+    private WeaponScript heavyWeapon;
+    private WeaponScript assaultWeapon;
+    private WeaponScript shotgun;
 
     private List<WeaponScript> weapons;
     private int weapon_index = 0;
@@ -26,14 +27,16 @@ public class PlayerScript : MonoBehaviour
     private void Awake()
     {
         // init weapons
-        primaryWeapon = gameObject.transform.Find("BasicWeapon").GetComponent<WeaponScript>(); //GetChild(0).GetComponent<WeaponScript>();
-        secondaryWeapon = gameObject.transform.Find("HeavyWeapon").GetComponent<WeaponScript>();
-        tertiaryWeapon = gameObject.transform.Find("AssaultWeapon").GetComponent<WeaponScript>();
+        primaryWeapon = gameObject.transform.Find("BasicWeapon").GetComponent<WeaponScript>();
+        heavyWeapon = gameObject.transform.Find("HeavyWeapon").GetComponent<WeaponScript>();
+        assaultWeapon = gameObject.transform.Find("AssaultWeapon").GetComponent<WeaponScript>();
+        shotgun = gameObject.transform.Find("ShotgunWeapon").GetComponent<WeaponScript>();
 
         weapons = new List<WeaponScript> { 
             primaryWeapon,
-            secondaryWeapon,
-            tertiaryWeapon
+            heavyWeapon,
+            assaultWeapon,
+            shotgun,
         };
 
         // init laser

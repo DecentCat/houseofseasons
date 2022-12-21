@@ -20,6 +20,12 @@ public class WeaponScript : MonoBehaviour
     /// </summary>
     public float bulletSpread = 0;
 
+    /// <summary>
+    /// Specifies how many projectiles are fired per shot.
+    /// each shot has its own spray. Setting this value >1 will emulate a shotgun.
+    /// </summary>
+    public uint projectilesPerShot = 1;
+
     // privates
     // cooldown in seconds
     private float cooldown;
@@ -37,7 +43,6 @@ public class WeaponScript : MonoBehaviour
         {
             cooldown -= Time.deltaTime;
         }
-        
     }
 
     //--------------------------------
@@ -53,17 +58,9 @@ public class WeaponScript : MonoBehaviour
         {
             cooldown = 1/shootingRate;
 
-            // Create a new shot
-            var shot = Instantiate(shotPrefab) as GameObject;
-
-            // Assign position
-            shot.transform.position = transform.position;
-
-            // set properties of shot
-            ShotScript shotScript = shot.GetComponent<ShotScript>();
-            if (shot != null)
+            for (int i = 0; i < projectilesPerShot; i++)
             {
-                shotScript.movementDirection = Rotate(dir, Random.Range(bulletSpread/(-2f), bulletSpread/2f));
+                SpawnProjectile(dir);
             }
         }
     }
@@ -89,5 +86,21 @@ public class WeaponScript : MonoBehaviour
         vector.x = (cos * tx) - (sin * ty);
         vector.y = (sin * tx) + (cos * ty);
         return vector;
+    }
+
+    private void SpawnProjectile(Vector2 direction)
+    {
+        // Create a new shot
+        var shot = Instantiate(shotPrefab) as GameObject;
+
+        // Assign position
+        shot.transform.position = transform.position;
+
+        // set properties of shot
+        ShotScript shotScript = shot.GetComponent<ShotScript>();
+        if (shot != null)
+        {
+            shotScript.movementDirection = Rotate(direction, Random.Range(bulletSpread / (-2f), bulletSpread / 2f));
+        }
     }
 }
