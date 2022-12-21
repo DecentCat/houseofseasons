@@ -96,4 +96,16 @@ public class PlayerScript : MonoBehaviour
         rb.MovePosition(rb.position + movementDirection.normalized * movementSpeed * Time.fixedDeltaTime);
     }
 
+    public void TakeDamage(int damage, Vector2 knockbackDirection)
+    {
+        health -= damage;
+
+        rb.MovePosition(rb.position + knockbackDirection * (damage * 2) * Time.fixedDeltaTime);
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
 }
