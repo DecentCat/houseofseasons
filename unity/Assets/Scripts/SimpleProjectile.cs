@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShotScript : MonoBehaviour
+public class SimpleProjectile : MonoBehaviour
 {
-    public bool enemyProjectile;
     public float movementSpeed = 10f;
     public int dealtDamage = 3;
     public Vector2 movementDirection = new Vector2(0, -1);
@@ -15,6 +14,7 @@ public class ShotScript : MonoBehaviour
         Destroy(gameObject, 7);
     }
 
+
     private void FixedUpdate()
     {
         Vector2 position = transform.position;
@@ -24,22 +24,9 @@ public class ShotScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        PlayerScript playerScript;
-        if (!collision.gameObject.TryGetComponent<PlayerScript>(out playerScript))
+        if (collision.gameObject.name == "Tilemap")
         {
             Destroy(gameObject);
-        }
-
-        if (!enemyProjectile && collision.gameObject.tag == "Enemy")
-        {
-            Destroy(gameObject);
-            collision.gameObject.GetComponent<EnemyBehavior>().TakeDamage(dealtDamage, movementDirection);
-        }
-
-        if (enemyProjectile && collision.gameObject.tag == "Player")
-        {
-            Destroy(gameObject);
-            collision.gameObject.GetComponent<PlayerScript>().TakeDamage(dealtDamage, movementDirection);
         }
     }
 
