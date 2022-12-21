@@ -29,15 +29,11 @@ public class Room : MonoBehaviour
     public RoomType type {get {return _type;}}
     public List<Vector2Int> doorpositions {get {return _doorpositions;}}
 
-    public PlayerScript playerscript {set {_playerscript = value; } get { return _playerscript; }}
-
     [SerializeField] private RoomType _type;
     // idx: 0,1,2,3 => WEST,SOUTH,EAST,NORTH
     [SerializeField] private List<TileBase> _doortiles;
     [SerializeField] private List<Vector2Int> _doorpositions;
-    [SerializeField] private PlayerScript _playerscript;
     private RoomTilemap[] _roomtilemaps;
-    private Level _level;
 
     // Start is called before the first frame update
     void Start()
@@ -51,33 +47,9 @@ public class Room : MonoBehaviour
 
     }
 
-    public void OnDoorEntered()
-    {
-        if (_playerscript == null)
-        {
-            Debug.LogError("PlayerScript null but door was entered in the room");
-            return;
-        }
-        float minDistance = float.MaxValue;
-        int doorDir = -1;
-        for(int i = 0; i < _doorpositions.Count; i++)
-        {
-            Vector2Int playerPos = new Vector2Int((int)_playerscript.transform.localPosition.x, (int)_playerscript.transform.localPosition.y);
-            float distance = Vector2Int.Distance(_doorpositions[i], playerPos);
-            if (distance < minDistance)
-            {
-                minDistance = distance;
-                doorDir = i;
-            }
-        }
-        _level.SetCameraParent(this, doorDir);
-    }
-
     // called when value in inspector changes
     void OnValidate()
     {
-        _level = GetComponentInParent<Level>();
-        _playerscript = GetComponentInChildren<PlayerScript>();
         _roomtilemaps = GetComponentsInChildren<RoomTilemap>();
         for(int i = 0;i < _roomtilemaps.Length;i++)
         {
