@@ -42,7 +42,7 @@ public class Room : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        OnValidate();
     }
 
     // Update is called once per frame

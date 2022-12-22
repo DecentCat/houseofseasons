@@ -14,6 +14,7 @@ public class Level : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        OnValidate();
         foreach (Room r in _allRooms)
         {
             r.transform.localPosition *= 2;

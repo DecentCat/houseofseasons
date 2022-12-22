@@ -24,19 +24,16 @@ public class ShotScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        PlayerScript playerScript;
-        if (!collision.gameObject.TryGetComponent<PlayerScript>(out playerScript))
+        if(collision.gameObject.name == "TriggerTilemap" || collision.gameObject.name == "Tilemap")
         {
             Destroy(gameObject);
-        }
-
-        if (!enemyProjectile && collision.gameObject.tag == "Enemy")
+        } 
+        else if (!enemyProjectile && collision.gameObject.tag == "Enemy")
         {
             Destroy(gameObject);
             collision.gameObject.GetComponent<EnemyBehavior>().TakeDamage(dealtDamage, movementDirection);
-        }
-
-        if (enemyProjectile && collision.gameObject.tag == "Player")
+        } 
+        else if (enemyProjectile && collision.gameObject.tag == "Player")
         {
             Destroy(gameObject);
             collision.gameObject.GetComponent<PlayerScript>().TakeDamage(dealtDamage, movementDirection);

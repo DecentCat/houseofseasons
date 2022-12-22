@@ -17,7 +17,7 @@ public class RoomTilemap : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-        //_tilemap = GetComponent<Tilemap>();
+        OnValidate();
     }
 
     // Update is called once per frame
