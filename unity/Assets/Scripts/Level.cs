@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour
 {
@@ -169,5 +170,10 @@ public class Level : MonoBehaviour
             mapOutput = mapOutputY + "\n" + mapOutput;
         }
         Debug.Log("[Level] Parsed Room:\n" + mapOutput);
+    }
+
+    public void LevelQuit()
+    {
+        SceneManager.LoadScene(0);
     }
 }
