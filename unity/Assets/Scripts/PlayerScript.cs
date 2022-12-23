@@ -24,6 +24,8 @@ public class PlayerScript : MonoBehaviour
 
     private LaserScript laser;
 
+    private Level _level;
+
     private void Awake()
     {
         // init weapons
@@ -41,6 +43,7 @@ public class PlayerScript : MonoBehaviour
 
         // init laser
         laser = gameObject.transform.Find("Laser").GetComponent<LaserScript>();
+        _level = GetComponentInParent<Level>();
     }
 
     void Update()
@@ -105,6 +108,7 @@ public class PlayerScript : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+            _level.LevelQuit();
         }
     }
 
