@@ -79,9 +79,10 @@ public class Room : MonoBehaviour
         _level = GetComponentInParent<Level>();
         _playerscript = GetComponentInChildren<PlayerScript>();
         _roomtilemaps = GetComponentsInChildren<RoomTilemap>();
-        for(int i = 0;i < _roomtilemaps.Length;i++)
+        //TODO: fix for 2x2 door
+        /*for(int i = 0;i < _roomtilemaps.Length;i++)
         {
             _roomtilemaps[i].UpdateTiles(_type, _doorpositions);
-        }
+        }*/
     }
 }

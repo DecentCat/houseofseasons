@@ -43,7 +43,8 @@ public class RoomTilemap : MonoBehaviour
 
     public void UpdateTiles(Room.RoomType type, List<Vector2Int> doorpositions)
     {
-        OnValidate();
+        //TODO: fix for 2x2 door
+        /*OnValidate();
         for(int idx = 0;idx < 4;idx++)
         {
             bool isPos = (((int)type >> idx) & 1) == 1;
@@ -60,6 +61,6 @@ public class RoomTilemap : MonoBehaviour
                 toSet = _tiles[3-idx];
             }
             _tilemap.SetTile(new Vector3Int(pos.x, pos.y, 0), toSet);
-        }
+        }*/
     }
 }

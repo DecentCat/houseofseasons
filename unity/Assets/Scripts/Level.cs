@@ -78,9 +78,9 @@ public class Level : MonoBehaviour
         }
         Room newRoom = _rooms[y, x];
         Vector2 doorPos = newRoom.doorpositions[oppositeDir];
-        Vector2 newPlayerPos = doorPos + (movVec * 0.5f);
-        newPlayerPos.x += 0.5f;
-        newPlayerPos.y += 0.5f;
+        Vector2 newPlayerPos = doorPos + (movVec * 1f);
+        //newPlayerPos.x += 0.5f;
+        //newPlayerPos.y += 0.5f;
         Debug.Log("Moved in direction " + newPlayerPos + ", " + movVec);
 
         playerScript.transform.parent = newRoom.transform;
