@@ -8,7 +8,7 @@ public class RoomTilemap : MonoBehaviour
 {
     public static string DOORTILEMAPTAG = "DoorTilemap";
 
-    [SerializeField] private bool _isTriggerTilemap;
+    [SerializeField] private bool _reversePos;
     [SerializeField] private List<TileBase> _tiles;
     private Tilemap _tilemap;
 
@@ -43,24 +43,27 @@ public class RoomTilemap : MonoBehaviour
 
     public void UpdateTiles(Room.RoomType type, List<Vector2Int> doorpositions)
     {
-        //TODO: fix for 2x2 door
-        /*OnValidate();
+        OnValidate();
         for(int idx = 0;idx < 4;idx++)
         {
             bool isPos = (((int)type >> idx) & 1) == 1;
-            isPos ^= _isTriggerTilemap;
+            isPos ^= _reversePos;
             Vector2Int pos = doorpositions[3-idx];
-            TileBase toSet;
-            if (isPos)
+            for(int i = 0;i < 4;i++)
             {
-                toSet = null;
+                Vector3Int specificPos = new Vector3Int(pos.x + (i % 2), pos.y + (i / 2), 0);
+                TileBase toSet;
+                if (isPos)
+                {
+                    toSet = null;
+                }
+                else
+                {
+                    //Debug.Log("[RoomTilemap] Setting Tile at Position " + specificPos);
+                    toSet = _tiles[15-idx*4-(3-i)];
+                }
+                _tilemap.SetTile(specificPos, toSet);
             }
-            else
-            {
-                //Debug.Log("[RoomTilemap] Setting Tile at Position " + new Vector3Int(pos.x, pos.y, 0));
-                toSet = _tiles[3-idx];
-            }
-            _tilemap.SetTile(new Vector3Int(pos.x, pos.y, 0), toSet);
-        }*/
+        }
     }
 }

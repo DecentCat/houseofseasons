@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class ShotScript : MonoBehaviour
 {
@@ -24,10 +25,11 @@ public class ShotScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.name == "TriggerTilemap" || collision.gameObject.name == "Tilemap")
+        TilemapCollider2D collider2D;
+        if(collision.gameObject.TryGetComponent<TilemapCollider2D>(out collider2D))
         {
             Destroy(gameObject);
-        } 
+        }
         else if (!enemyProjectile && collision.gameObject.tag == "Enemy")
         {
             Destroy(gameObject);

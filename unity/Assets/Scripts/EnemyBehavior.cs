@@ -64,7 +64,7 @@ public class EnemyBehavior : MonoBehaviour
 
     private void Movement(GameObject player)
     {
-        Debug.Log(player.transform.position + " " + transform.position);
+        //Debug.Log(player.transform.position + " " + transform.position);
         if (player != null && Vector2.Distance(player.transform.position, transform.position) <= awareDistance)
         {
             movementDirection = (player.transform.position - transform.position).normalized;
