@@ -16,10 +16,7 @@ public class Level : MonoBehaviour
     void Start()
     {
         OnValidate();
-        foreach (Room r in _allRooms)
-        {
-            r.transform.localPosition *= 2;
-        }
+        Rescale();
     }
 
     // Update is called once per frame
@@ -93,12 +90,20 @@ public class Level : MonoBehaviour
         _camera.transform.localPosition = prevLocalPos;
     }
 
+    public void Rescale()
+    {
+        foreach (Room r in _allRooms)
+        {
+            r.transform.localPosition *= 2;
+        }
+    }
+
     // called when value in inspector changes
     // puts rooms into _rooms variable
     // condition that have to be met in order for it to work:
     // * rooms on same horizontal level have same y value
     // * rooms on same vertical level have same x value
-    void OnValidate()
+    public void OnValidate()
     {
         _allRooms = GetComponentsInChildren<Room>();
         int maxWidth = 0, maxHeight = 0;

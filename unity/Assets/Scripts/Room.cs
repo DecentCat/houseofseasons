@@ -26,7 +26,7 @@ public class Room : MonoBehaviour
         ALL_DOOR = 0b1111
     };
 
-    public RoomType type {get {return _type;}}
+    public RoomType type {get {return _type;} set {_type = value; OnValidate(); }}
     public List<Vector2Int> doorpositions {get {return _doorpositions;}}
 
     public PlayerScript playerscript {set {_playerscript = value; } get { return _playerscript; }}
