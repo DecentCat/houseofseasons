@@ -7,6 +7,9 @@ public class LaserScript : MonoBehaviour
     public float maxRange;
     public LayerMask layersToHit;
     public int damage;
+    public float charge;
+    public bool infiniteCharge;
+    public float maxCharge = 100;
 
     private LineRenderer lineRenderer;
     private float damageDelay = 1f / 2f;
@@ -34,23 +37,37 @@ public class LaserScript : MonoBehaviour
         if (hit.collider != null && lineRenderer.enabled)
         {
             //Debug.Log(hit.collider.gameObject.name);
-
-            if (hit.collider.tag == "Enemy" && doDamage)
+            if (doDamage)
             {
-                hit.collider.gameObject.GetComponent<EnemyBehavior>().TakeDamage(damage, new Vector2(0,0));
+                if (!infiniteCharge)
+                {
+                    charge -= 1f;
+                }
+
+                if (hit.collider.tag == "Enemy")
+                {
+                    hit.collider.gameObject.GetComponent<EnemyBehavior>().TakeDamage(damage, new Vector2(0, 0));
+                }
+
                 doDamage = false;
             }
+            
+            lineRenderer.enabled = false;
         }
     }
 
     public void Shoot()
     {
-        lineRenderer.enabled = true;
+        if (charge > 0 || infiniteCharge)
+        {
+            lineRenderer.enabled = true;
+        }
     }
 
-    public void StopShooting()
+    public void Charge(float charge)
     {
-        lineRenderer.enabled = false;
+        this.charge += charge;
+        if (this.charge > maxCharge) { charge = maxCharge; };
     }
 
     private void EnableDamage()

@@ -14,35 +14,12 @@ public class PlayerScript : MonoBehaviour
     private Vector2 movementDirection = new Vector2(0, -1);
     private Vector2 facingDirection = Vector2.zero;
 
-    private WeaponScript primaryWeapon;
-    private WeaponScript heavyWeapon;
-    private WeaponScript assaultWeapon;
-    private WeaponScript shotgun;
-
-    private List<WeaponScript> weapons;
-    private int weapon_index = 0;
-
-    private LaserScript laser;
-
+    private WeaponManagerScript weaponManager;
     private Level _level;
 
     private void Awake()
     {
-        // init weapons
-        primaryWeapon = gameObject.transform.Find("BasicWeapon").GetComponent<WeaponScript>();
-        heavyWeapon = gameObject.transform.Find("HeavyWeapon").GetComponent<WeaponScript>();
-        assaultWeapon = gameObject.transform.Find("AssaultWeapon").GetComponent<WeaponScript>();
-        shotgun = gameObject.transform.Find("ShotgunWeapon").GetComponent<WeaponScript>();
-
-        weapons = new List<WeaponScript> { 
-            primaryWeapon,
-            heavyWeapon,
-            assaultWeapon,
-            shotgun,
-        };
-
-        // init laser
-        laser = gameObject.transform.Find("Laser").GetComponent<LaserScript>();
+        weaponManager = GetComponent<WeaponManagerScript>();
         _level = GetComponentInParent<Level>();
     }
 
@@ -61,11 +38,11 @@ public class PlayerScript : MonoBehaviour
         {
             if (Input.GetAxis("Mouse ScrollWheel") > 0f)
             {
-                weapon_index = weapon_index < weapons.Count - 1 ? weapon_index + 1 : 0;
+                weaponManager.SwitchWeaponPrevious();
             }
             else if (Input.GetAxis("Mouse ScrollWheel") < 0f)
             {
-                weapon_index = weapon_index > 0 ? weapon_index - 1 : weapons.Count - 1;
+                weaponManager.SwitchWeaponNext();
             }
         }
 
@@ -76,22 +53,17 @@ public class PlayerScript : MonoBehaviour
         // fire equipped weapon
         if (Input.GetButton("Fire1"))
         {
-            var currentWeapon = weapons[weapon_index];
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 direction = mousePos - currentWeapon.transform.position;
-            currentWeapon.Shoot(direction.normalized);
+            Vector2 direction = mousePos - transform.position;
+            weaponManager.ShootEquippedWeapon(direction.normalized);
         }
 
-        // fire laser
+        // secondary 
         if (Input.GetButton("Fire2"))
         {
-            laser.Shoot();
+            // bombs? items?
         }
-        else if (Input.GetButtonUp("Fire2"))
-        {
-            laser.StopShooting();
-        }
-
+       
     }
 
     void FixedUpdate()

@@ -48,3 +48,5 @@ MonoBehaviour:
   shootingRate: 2
   bulletSpread: 0
   projectilesPerShot: 1
+  bullets: 0
+  infiniteBullets: 1
