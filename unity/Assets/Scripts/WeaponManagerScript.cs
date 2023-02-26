@@ -4,14 +4,6 @@ using UnityEngine;
 
 public class WeaponManagerScript : MonoBehaviour
 {
-    public enum Weapon
-    {
-        Primary = 0,
-        Heavy   = 1,
-        Assault = 2,
-        Shotgun = 3,
-        Laser   = 4
-    }
 
     // public bool primaryUnlocked = true;
     public bool heavyUnlocked;
@@ -26,9 +18,9 @@ public class WeaponManagerScript : MonoBehaviour
     private LaserScript laser;
 
     private List<MonoBehaviour> weapons;
-    private int selectedWeaponIndex = (int)Weapon.Primary;
+    private int selectedWeaponIndex = (int)WeaponType.Primary;
 
-    private Dictionary<Weapon, MonoBehaviour> weaponDict;
+    private Dictionary<WeaponType, MonoBehaviour> weaponDict;
 
 
     private void Awake()
@@ -41,13 +33,13 @@ public class WeaponManagerScript : MonoBehaviour
         laser = gameObject.transform.Find("Laser").GetComponent<LaserScript>();
 
         // init weapon enum association
-        weaponDict = new Dictionary<Weapon, MonoBehaviour>()
+        weaponDict = new Dictionary<WeaponType, MonoBehaviour>()
         {
-            {Weapon.Primary, primaryWeapon},
-            {Weapon.Heavy, heavyWeapon},
-            {Weapon.Assault, assaultWeapon},
-            {Weapon.Shotgun, shotgun},
-            {Weapon.Laser, laser},
+            {WeaponType.Primary, primaryWeapon},
+            {WeaponType.Heavy, heavyWeapon},
+            {WeaponType.Assault, assaultWeapon},
+            {WeaponType.Shotgun, shotgun},
+            {WeaponType.Laser, laser},
         };
 
         // init active weapons
@@ -65,18 +57,6 @@ public class WeaponManagerScript : MonoBehaviour
         if (shotgunUnlocked) { weapons.Add(shotgun); }
         if (laserUnlocked) { weapons.Add(laser); }
 
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void ShootEquippedWeapon(Vector2 dir)
@@ -104,7 +84,7 @@ public class WeaponManagerScript : MonoBehaviour
         selectedWeaponIndex = selectedWeaponIndex >= 0 ? selectedWeaponIndex : weapons.Count - 1;
     }
 
-    public void EquipWeapon(Weapon weapon)
+    public void EquipWeapon(WeaponType weapon)
     {
         //selectedWeaponIndex = (int)weapon;
 
@@ -117,7 +97,7 @@ public class WeaponManagerScript : MonoBehaviour
         }
     }
 
-    public void UnlockWeapon(Weapon weapon)
+    public void UnlockWeapon(WeaponType weapon)
     {
         if (!weapons.Contains(weaponDict[weapon]))
         {
@@ -125,19 +105,19 @@ public class WeaponManagerScript : MonoBehaviour
 
             switch (weapon)
             {
-                case Weapon.Heavy:
+                case WeaponType.Heavy:
                     heavyUnlocked = true;
                     break;
 
-                case Weapon.Assault:
+                case WeaponType.Assault:
                     assaultUnlocked = true;
                     break;
 
-                case Weapon.Shotgun:
+                case WeaponType.Shotgun:
                     shotgunUnlocked = true;
                     break;
 
-                case Weapon.Laser:
+                case WeaponType.Laser:
                     laserUnlocked = true;
                     break;
 
@@ -146,7 +126,7 @@ public class WeaponManagerScript : MonoBehaviour
         }
     }
 
-    public void AddAmmo(Weapon weaponType, int amount)
+    public void AddAmmo(WeaponType weaponType, int amount)
     {
         object weapon = weaponDict[weaponType];
         if (weapon is LaserScript)
@@ -158,4 +138,13 @@ public class WeaponManagerScript : MonoBehaviour
             ((WeaponScript)weapon).AddBullets(amount);
         }
     }
+}
+
+public enum WeaponType
+{
+    Primary = 0,
+    Heavy = 1,
+    Assault = 2,
+    Shotgun = 3,
+    Laser = 4
 }
