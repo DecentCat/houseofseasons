@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2151411778719461073}
   - component: {fileID: 2039969185222439994}
   - component: {fileID: 4985307316177722174}
+  - component: {fileID: 2918958622896361126}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -167,6 +168,22 @@ MonoBehaviour:
   shotBuffer: 0.5
   rb: {fileID: 2039969185222439997}
   animator: {fileID: 2039969185222439994}
+--- !u!114 &2918958622896361126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039969185222439999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11adb5bdb7a46514db96c2203f70f111, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heavyUnlocked: 0
+  assaultUnlocked: 0
+  shotgunUnlocked: 0
+  laserUnlocked: 0
 --- !u!1001 &4365133261641349468
 PrefabInstance:
   m_ObjectHideFlags: 0

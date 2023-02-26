@@ -26,6 +26,16 @@ public class WeaponScript : MonoBehaviour
     /// </summary>
     public uint projectilesPerShot = 1;
 
+    /// <summary>
+    /// Amount of bullets in the weapon.
+    /// </summary>
+    public int bullets;
+
+    /// <summary>
+    /// Infinite bullets.
+    /// </summary>
+    public bool infiniteBullets;
+
     // privates
     // cooldown in seconds
     private float cooldown;
@@ -45,24 +55,27 @@ public class WeaponScript : MonoBehaviour
         }
     }
 
-    //--------------------------------
-    // 3 - Shooting from another script
-    //--------------------------------
-
     /// <summary>
     /// Create a new projectile if possible
     /// </summary>
     public void Shoot(Vector2 dir)
     {
-        if (CanAttack)
+        if (CanAttack && (bullets > 0 || infiniteBullets))
         {
-            cooldown = 1/shootingRate;
+            cooldown = 1 / shootingRate;
 
             for (int i = 0; i < projectilesPerShot; i++)
             {
                 SpawnProjectile(dir);
             }
+
+            bullets--;
         }
+    }
+
+    public void AddBullets(int amount)
+    {
+        bullets += amount;
     }
 
     /// <summary>

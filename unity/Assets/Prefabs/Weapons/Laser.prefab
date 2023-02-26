@@ -50,6 +50,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 385
   damage: 1
+  charge: 100
+  infiniteCharge: 0
 --- !u!120 &4614490904865872888
 LineRenderer:
   m_ObjectHideFlags: 0

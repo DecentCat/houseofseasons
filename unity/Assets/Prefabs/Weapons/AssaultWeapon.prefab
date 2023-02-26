@@ -47,3 +47,6 @@ MonoBehaviour:
   shotPrefab: {fileID: 8329337649942517644, guid: 1c32b1cbd49060c4db5c8b403d88b10f, type: 3}
   shootingRate: 7.5
   bulletSpread: 10
+  projectilesPerShot: 1
+  bullets: 60
+  infiniteBullets: 0
