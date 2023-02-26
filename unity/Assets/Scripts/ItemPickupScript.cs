@@ -5,7 +5,7 @@ using UnityEngine;
 public class ItemPickupScript : MonoBehaviour
 {
     public PickupType type;
-    public WeaponManagerScript.Weapon weaponType;
+    public WeaponType weaponType;
     public int amount;
 
     
