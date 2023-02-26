@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemPickupScript : MonoBehaviour
 {
-    public ItemType type;
+    public PickupType type;
     public WeaponManagerScript.Weapon weaponType;
     public int amount;
 
@@ -18,15 +18,15 @@ public class ItemPickupScript : MonoBehaviour
             WeaponManagerScript weaponManager = collision.gameObject.GetComponent<WeaponManagerScript>();
             switch (type)
             {
-                case ItemType.Healing:
+                case PickupType.Healing:
                     player.HealDamage(amount);
                     break;
 
-                case ItemType.Ammo:
+                case PickupType.Ammo:
                     weaponManager.AddAmmo(weaponType, amount);
                     break;
 
-                case ItemType.WeaponUnlock:
+                case PickupType.WeaponUnlock:
                     weaponManager.UnlockWeapon(weaponType);
                     break;
 
@@ -36,7 +36,7 @@ public class ItemPickupScript : MonoBehaviour
     }
 }
 
-public enum ItemType
+public enum PickupType
 {
     Healing,
     Ammo,
