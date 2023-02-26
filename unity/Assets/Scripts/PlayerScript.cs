@@ -1,10 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class PlayerScript : MonoBehaviour
 {
     // Player stats
     public int health = 100;
+    public int maxHealth = 100;
     public float movementSpeed = 5f;
     public float shotBuffer = 0.5f;
 
@@ -84,4 +86,9 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
+    public void HealDamage(int healing)
+    {
+        health += healing;
+        health = health > maxHealth ? maxHealth : health;
+    }
 }
