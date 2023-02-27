@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RandomBlueLevelScene.unity
     guid: 2d0ff3f60fbb41d4a99d90cebfcd4af6
+  - enabled: 1
+    path: Assets/Scenes/OptionsMenu.unity
+    guid: 3d37fb7b8d932bc43a934ec01a071727
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: f5ea99ed7c1d05f4caa957ad8573fddb
   m_configObjects: {}
