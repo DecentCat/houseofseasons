@@ -22,7 +22,7 @@ public class ExitScript : MonoBehaviour
         PlayerScript player;
         if (other.TryGetComponent<PlayerScript>(out player))
         {
-            _level.LevelQuit();
+            _level.LevelQuit(player);
         }
     }
 }

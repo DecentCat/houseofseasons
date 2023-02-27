@@ -52,11 +52,15 @@ public class WeaponManagerScript : MonoBehaviour
             //laser
         };
 
+        heavyUnlocked = CrossSceneInformation.PlayerHeavyUnlocked;
+        assaultUnlocked = CrossSceneInformation.PlayerAssaultUnlocked;
+        shotgunUnlocked = CrossSceneInformation.PlayerShotgunUnlocked;
+        laserUnlocked = CrossSceneInformation.PlayerLaserUnlocked;
+
         if (heavyUnlocked) { weapons.Add(heavyWeapon); }
         if (assaultUnlocked) { weapons.Add(assaultWeapon); }
         if (shotgunUnlocked) { weapons.Add(shotgun); }
         if (laserUnlocked) { weapons.Add(laser); }
-
     }
 
     public void ShootEquippedWeapon(Vector2 dir)

@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
+        CrossSceneInformation.ResetValues();
         SceneManager.LoadScene(1);
     }
 

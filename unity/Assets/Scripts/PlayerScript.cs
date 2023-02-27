@@ -16,13 +16,15 @@ public class PlayerScript : MonoBehaviour
     private Vector2 movementDirection = new Vector2(0, -1);
     private Vector2 facingDirection = Vector2.zero;
 
-    private WeaponManagerScript weaponManager;
+    public WeaponManagerScript weaponManager;
     private Level _level;
 
     private void Awake()
     {
         weaponManager = GetComponent<WeaponManagerScript>();
         _level = GetComponentInParent<Level>();
+        health = CrossSceneInformation.PlayerHealth;
+        maxHealth = CrossSceneInformation.PlayerMaxHealth;
     }
 
     void Update()
@@ -82,7 +84,7 @@ public class PlayerScript : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
-            _level.LevelQuit();
+            _level.LevelQuit(this);
         }
     }
 
