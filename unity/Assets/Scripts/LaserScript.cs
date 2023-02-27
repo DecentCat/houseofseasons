@@ -67,7 +67,10 @@ public class LaserScript : MonoBehaviour
     public void Charge(float charge)
     {
         this.charge += charge;
-        if (this.charge > maxCharge) { charge = maxCharge; };
+        if (this.charge > maxCharge)
+        {
+            this.charge = maxCharge; 
+        };
     }
 
     private void EnableDamage()

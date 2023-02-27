@@ -1,10 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class PlayerScript : MonoBehaviour
 {
     // Player stats
     public int health = 100;
+    public int maxHealth = 100;
     public float movementSpeed = 5f;
     public float shotBuffer = 0.5f;
 
@@ -14,13 +16,15 @@ public class PlayerScript : MonoBehaviour
     private Vector2 movementDirection = new Vector2(0, -1);
     private Vector2 facingDirection = Vector2.zero;
 
-    private WeaponManagerScript weaponManager;
+    public WeaponManagerScript weaponManager;
     private Level _level;
 
     private void Awake()
     {
         weaponManager = GetComponent<WeaponManagerScript>();
         _level = GetComponentInParent<Level>();
+        health = CrossSceneInformation.PlayerHealth;
+        maxHealth = CrossSceneInformation.PlayerMaxHealth;
     }
 
     void Update()
@@ -80,8 +84,13 @@ public class PlayerScript : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
-            _level.LevelQuit();
+            _level.LevelQuit(this);
         }
     }
 
+    public void HealDamage(int healing)
+    {
+        health += healing;
+        health = health > maxHealth ? maxHealth : health;
+    }
 }

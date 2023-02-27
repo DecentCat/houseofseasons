@@ -177,8 +177,24 @@ public class Level : MonoBehaviour
         Debug.Log("[Level] Parsed Room:\n" + mapOutput);
     }
 
-    public void LevelQuit()
+    public void LevelQuit(PlayerScript player)
     {
-        SceneManager.LoadScene(0);
+        int levelAmt = CrossSceneInformation.Level;
+        if (levelAmt < CrossSceneInformation.MaxLevel)
+        {
+            CrossSceneInformation.Level++;
+            CrossSceneInformation.PlayerHealth = player.health;
+            CrossSceneInformation.PlayerMaxHealth = player.maxHealth;
+            CrossSceneInformation.PlayerHeavyUnlocked = player.weaponManager.heavyUnlocked;
+            CrossSceneInformation.PlayerLaserUnlocked = player.weaponManager.laserUnlocked;
+            CrossSceneInformation.PlayerAssaultUnlocked = player.weaponManager.assaultUnlocked;
+            CrossSceneInformation.PlayerShotgunUnlocked = player.weaponManager.shotgunUnlocked;
+            SceneManager.LoadScene(1);
+        }
+        else
+        {
+            // TODO: End Cutscene
+            SceneManager.LoadScene(0);
+        }
     }
 }
