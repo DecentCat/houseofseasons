@@ -49,7 +49,7 @@ public class WeaponManagerScript : MonoBehaviour
             {WeaponType.Laser, laser},
         };
 
-        // init active weapons
+        // init active weapons and unlock
         weapons = new List<MonoBehaviour>()
         {
             primaryWeapon,
@@ -64,14 +64,22 @@ public class WeaponManagerScript : MonoBehaviour
         shotgunUnlocked |= CrossSceneInformation.PlayerShotgunUnlocked;
         laserUnlocked |= CrossSceneInformation.PlayerLaserUnlocked;
 
+        // unlock weapons
         if (heavyUnlocked) { weapons.Add(heavyWeapon); }
         if (assaultUnlocked) { weapons.Add(assaultWeapon); }
         if (shotgunUnlocked) { weapons.Add(shotgun); }
         if (laserUnlocked) { weapons.Add(laser); }
 
         // weaponInfoUIScript.SetWeaponActive(WeaponType.Primary, primaryWeapon.GetBullets);
+
+        // load weapon ammo
+        if (CrossSceneInformation.AmmoCount != null)
+        {
+            LoadAmmoCount(CrossSceneInformation.AmmoCount);
+        }
     }
 
+    // get WeaponType by index in Weapon Dictionary
     private WeaponType GetTypeByIndex(int index)
     {
         var weapon = weapons[index];
@@ -89,7 +97,6 @@ public class WeaponManagerScript : MonoBehaviour
 
     private void UpdateUI()
     {
-        
         WeaponType type = GetTypeByIndex(selectedWeaponIndex);
         UpdateUI(type);
     }
@@ -197,6 +204,42 @@ public class WeaponManagerScript : MonoBehaviour
         }
 
         UpdateUI();
+    }
+
+    public int[] ExportAmmoCount()
+    {
+        int[] array = new int[5];
+        for (int idx = 0; idx < array.Length; idx++)
+        {
+            WeaponType type = (WeaponType)idx;
+            object weapon = weaponDict[type];
+            if (weapon is LaserScript)
+            {
+                array[idx] = (int)((LaserScript)weapon).charge;
+            }
+            else if (weapon is WeaponScript)
+            {
+               array[idx] = ((WeaponScript)weapon).bullets;
+            }
+        }
+        return array;
+    }
+
+    public void LoadAmmoCount(int[] array)
+    {
+        for (int idx = 0; idx < array.Length; idx++)
+        {
+            WeaponType type = (WeaponType)idx;
+            object weapon = weaponDict[type];
+            if (weapon is LaserScript)
+            {
+                ((LaserScript)weapon).charge = array[idx];
+            }
+            else if (weapon is WeaponScript)
+            {
+                ((WeaponScript)weapon).bullets = array[idx];
+            }
+        }
     }
 }
 

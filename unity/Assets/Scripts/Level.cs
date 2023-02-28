@@ -189,6 +189,7 @@ public class Level : MonoBehaviour
             CrossSceneInformation.PlayerLaserUnlocked = player.weaponManager.laserUnlocked;
             CrossSceneInformation.PlayerAssaultUnlocked = player.weaponManager.assaultUnlocked;
             CrossSceneInformation.PlayerShotgunUnlocked = player.weaponManager.shotgunUnlocked;
+            CrossSceneInformation.AmmoCount = player.weaponManager.ExportAmmoCount();
             SceneManager.LoadScene(1);
         }
         else
