@@ -40,12 +40,6 @@ public class ShotScript : MonoBehaviour
             Destroy(gameObject);
             collision.gameObject.GetComponent<PlayerScript>().TakeDamage(dealtDamage, movementDirection);
         }
-        RandomItemPickup itemPickup;
-        if(collision.gameObject.TryGetComponent<RandomItemPickup>(out itemPickup))
-        {
-            Destroy(gameObject);
-            itemPickup.OpenBox();
-        }
     }
 
     public void SetDirection(Vector2 direction)

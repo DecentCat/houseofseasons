@@ -84,7 +84,7 @@ public class PlayerScript : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
-            _level.LevelQuit(this, true);
+            _level.LevelQuit(this);
         }
     }
 

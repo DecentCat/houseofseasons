@@ -73,6 +73,19 @@ public class LaserScript : MonoBehaviour
         };
     }
 
+    public float GetCharge
+    {
+        get
+        {
+            if (infiniteCharge)
+            {
+                return -1f;
+            }
+
+            return charge;
+        }
+    }
+
     private void EnableDamage()
     {
         doDamage = true;

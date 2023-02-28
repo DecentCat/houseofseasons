@@ -164,10 +164,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  maxHealth: 100
   movementSpeed: 5
   shotBuffer: 0.5
   rb: {fileID: 2039969185222439997}
   animator: {fileID: 2039969185222439994}
+  weaponManager: {fileID: 0}
 --- !u!114 &2918958622896361126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,6 +186,7 @@ MonoBehaviour:
   assaultUnlocked: 0
   shotgunUnlocked: 0
   laserUnlocked: 0
+  weaponInfoUI: {fileID: 0}
 --- !u!1001 &4365133261641349468
 PrefabInstance:
   m_ObjectHideFlags: 0

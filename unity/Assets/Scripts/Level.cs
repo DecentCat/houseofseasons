@@ -15,7 +15,6 @@ public class Level : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(CrossSceneInformation.Level + " / " + CrossSceneInformation.MaxLevel);
         OnValidate();
         Rescale();
     }
@@ -178,11 +177,6 @@ public class Level : MonoBehaviour
         Debug.Log("[Level] Parsed Room:\n" + mapOutput);
     }
 
-    public void LevelQuit(PlayerScript player, bool death)
-    {
-        SceneManager.LoadScene("GameOver");
-    }
-
     public void LevelQuit(PlayerScript player)
     {
         int levelAmt = CrossSceneInformation.Level;
@@ -195,6 +189,7 @@ public class Level : MonoBehaviour
             CrossSceneInformation.PlayerLaserUnlocked = player.weaponManager.laserUnlocked;
             CrossSceneInformation.PlayerAssaultUnlocked = player.weaponManager.assaultUnlocked;
             CrossSceneInformation.PlayerShotgunUnlocked = player.weaponManager.shotgunUnlocked;
+            CrossSceneInformation.AmmoCount = player.weaponManager.ExportAmmoCount();
             SceneManager.LoadScene(1);
         }
         else

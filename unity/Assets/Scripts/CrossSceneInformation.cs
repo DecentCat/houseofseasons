@@ -15,13 +15,15 @@ public static class CrossSceneInformation
     public static bool PlayerShotgunUnlocked = false;
     public static bool PlayerLaserUnlocked = false;
 
+    public static int[] AmmoCount;
+
     static CrossSceneInformation() {
         CrossSceneInformation.ResetValues();
     }
 
     public static void ResetValues()
     {
-        MaxLevel = 3; // TODO: Change to higher value
+        MaxLevel = 1; // TODO: Change to higher value
         Level = 1;
 
         PlayerHealth = 100;
@@ -31,5 +33,7 @@ public static class CrossSceneInformation
         PlayerAssaultUnlocked = false;
         PlayerShotgunUnlocked = false;
         PlayerLaserUnlocked = false;
+
+        AmmoCount = null;
     }
 }
