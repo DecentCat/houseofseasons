@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7841865868874115790}
   - component: {fileID: -6124663100201265323}
   - component: {fileID: 6145671333248470800}
-  - component: {fileID: 3785157349671357038}
+  - component: {fileID: 7446721406734547964}
   m_Layer: 0
-  m_Name: LaseAmmoPickup
+  m_Name: RandomNormalPickup
   m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 479874290660777804}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 510c77fbbddb12347ad186412cf16995, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ddea8dce0fe8c384db13a52d00e99f66, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,7 +96,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0034187883, y: -0.0042556375}
@@ -112,7 +112,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.31057978, y: 0.3390455}
   m_EdgeRadius: 0
---- !u!114 &3785157349671357038
+--- !u!114 &7446721406734547964
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,9 +121,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 479874290660777804}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d76c962ccd0931478116898c9c8e217, type: 3}
+  m_Script: {fileID: 11500000, guid: bed7dedda7d5dbc4a817750b12844114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  weaponType: 4
-  amount: 50
+  _possiblePickups:
+  - {fileID: 3785157349671357038, guid: 7ca08b3e1dc8a0d45a0e786640499b3c, type: 3}
+  - {fileID: 3785157349671357038, guid: 9164fddbf83a2a448ab3b5af121882de, type: 3}
+  - {fileID: 3785157349671357038, guid: 5df1403d929c9a548b1654f74307c2ab, type: 3}
+  - {fileID: 3785157349671357038, guid: 21b2a4c933e65834eab0d38b5e5c66fb, type: 3}
+  - {fileID: 3785157349671357038, guid: 05042db35c0131d4c816c864125f89d5, type: 3}
