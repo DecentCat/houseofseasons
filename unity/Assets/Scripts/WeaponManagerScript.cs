@@ -1,15 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponManagerScript : MonoBehaviour
 {
-
     // public bool primaryUnlocked = true;
     public bool heavyUnlocked;
     public bool assaultUnlocked;
     public bool shotgunUnlocked;
     public bool laserUnlocked;
+
+    [SerializeField] GameObject weaponInfoUI;
+    private WeaponInfoUIScript weaponInfoUIScript;
 
     private WeaponScript primaryWeapon;
     private WeaponScript heavyWeapon;
@@ -25,6 +30,8 @@ public class WeaponManagerScript : MonoBehaviour
 
     private void Awake()
     {
+        weaponInfoUIScript = weaponInfoUI.GetComponent<WeaponInfoUIScript>();
+
         // init weapons and laser
         primaryWeapon = gameObject.transform.Find("BasicWeapon").GetComponent<WeaponScript>();
         heavyWeapon = gameObject.transform.Find("HeavyWeapon").GetComponent<WeaponScript>();
@@ -52,15 +59,54 @@ public class WeaponManagerScript : MonoBehaviour
             //laser
         };
 
-        heavyUnlocked = CrossSceneInformation.PlayerHeavyUnlocked;
-        assaultUnlocked = CrossSceneInformation.PlayerAssaultUnlocked;
-        shotgunUnlocked = CrossSceneInformation.PlayerShotgunUnlocked;
-        laserUnlocked = CrossSceneInformation.PlayerLaserUnlocked;
+        heavyUnlocked |= CrossSceneInformation.PlayerHeavyUnlocked;
+        assaultUnlocked |= CrossSceneInformation.PlayerAssaultUnlocked;
+        shotgunUnlocked |= CrossSceneInformation.PlayerShotgunUnlocked;
+        laserUnlocked |= CrossSceneInformation.PlayerLaserUnlocked;
 
         if (heavyUnlocked) { weapons.Add(heavyWeapon); }
         if (assaultUnlocked) { weapons.Add(assaultWeapon); }
         if (shotgunUnlocked) { weapons.Add(shotgun); }
         if (laserUnlocked) { weapons.Add(laser); }
+
+        weaponInfoUIScript.SetWeaponActive(WeaponType.Primary, primaryWeapon.GetBullets);
+    }
+
+    private WeaponType GetTypeByIndex(int index)
+    {
+        var weapon = weapons[index];
+        WeaponType type = WeaponType.Primary;
+        foreach (var pair in weaponDict)
+        {
+            if (pair.Value == weapon)
+            {
+                type = pair.Key;
+                break;
+            }
+        }
+        return type;
+    }
+
+    private void UpdateUI()
+    {
+        
+        WeaponType type = GetTypeByIndex(selectedWeaponIndex);
+        UpdateUI(type);
+    }
+
+    private void UpdateUI(WeaponType type)
+    {
+        object weapon = weapons[selectedWeaponIndex];
+        int ammoCount = 0;
+        if (weapon is LaserScript)
+        {
+            ammoCount = (int)((LaserScript)weapon).GetCharge;
+        }
+        else if (weapon is WeaponScript)
+        {
+            ammoCount = ((WeaponScript)weapon).GetBullets;
+        }
+        weaponInfoUIScript.SetWeaponActive(type, ammoCount);
     }
 
     public void ShootEquippedWeapon(Vector2 dir)
@@ -69,10 +115,12 @@ public class WeaponManagerScript : MonoBehaviour
         if (weapon is LaserScript)
         {
             ((LaserScript)weapon).Shoot();
+            weaponInfoUIScript.UpdateAmmoCount((int)((LaserScript)weapon).GetCharge);
         }
         else if (weapon is WeaponScript)
         {
             ((WeaponScript)weapon).Shoot(dir);
+            weaponInfoUIScript.UpdateAmmoCount(((WeaponScript)weapon).GetBullets);
         }
     }
 
@@ -80,12 +128,16 @@ public class WeaponManagerScript : MonoBehaviour
     {
         selectedWeaponIndex++; 
         selectedWeaponIndex = selectedWeaponIndex < weapons.Count ? selectedWeaponIndex : 0;
+
+        UpdateUI();
     }
 
     public void SwitchWeaponPrevious()
     {
         selectedWeaponIndex--;
         selectedWeaponIndex = selectedWeaponIndex >= 0 ? selectedWeaponIndex : weapons.Count - 1;
+
+        UpdateUI();
     }
 
     public void EquipWeapon(WeaponType weapon)
@@ -99,6 +151,8 @@ public class WeaponManagerScript : MonoBehaviour
                 selectedWeaponIndex = idx;
             }
         }
+
+        UpdateUI(weapon);
     }
 
     public void UnlockWeapon(WeaponType weapon)
@@ -141,6 +195,8 @@ public class WeaponManagerScript : MonoBehaviour
         {
             ((WeaponScript)weapon).AddBullets(amount);
         }
+
+        UpdateUI();
     }
 }
 

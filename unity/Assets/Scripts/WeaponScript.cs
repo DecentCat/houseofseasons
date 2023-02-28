@@ -78,6 +78,19 @@ public class WeaponScript : MonoBehaviour
         bullets += amount;
     }
 
+    public int GetBullets
+    {
+        get
+        {
+            if (infiniteBullets)
+            {
+                return -1;
+            }
+
+            return bullets;
+        }
+    }
+
     /// <summary>
     /// Is the weapon ready to create a new projectile?
     /// </summary>

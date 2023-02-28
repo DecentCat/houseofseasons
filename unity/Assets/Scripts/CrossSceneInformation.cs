@@ -15,6 +15,11 @@ public static class CrossSceneInformation
     public static bool PlayerShotgunUnlocked = false;
     public static bool PlayerLaserUnlocked = false;
 
+    public static int heavyAmmo;
+    public static int assaultAmmo;
+    public static int shotgunAmmo;
+    public static float laserAmmo;
+
     static CrossSceneInformation() {
         CrossSceneInformation.ResetValues();
     }
@@ -31,5 +36,10 @@ public static class CrossSceneInformation
         PlayerAssaultUnlocked = false;
         PlayerShotgunUnlocked = false;
         PlayerLaserUnlocked = false;
+
+        heavyAmmo = -1;
+        assaultAmmo = -1;
+        shotgunAmmo = -1;
+        laserAmmo = -1f;
     }
 }
