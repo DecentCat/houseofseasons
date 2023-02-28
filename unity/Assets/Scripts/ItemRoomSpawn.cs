@@ -10,8 +10,30 @@ public class ItemRoomSpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerScript script = transform.parent.GetComponentInChildren<PlayerScript>();
+        List<ItemPickupScript> filterList = new List<ItemPickupScript>(_possibleItemSpawns);
+        for(int i = 0;i < _possibleItemSpawns.Count;i++)
+        {
+            WeaponType type = filterList[i].weaponType;
+            switch(type)
+            {
+                case WeaponType.Heavy:
+                    if (script.weaponManager.heavyUnlocked) _possibleItemSpawns.Remove(filterList[i]); break;
+                case WeaponType.Laser:
+                    if (script.weaponManager.laserUnlocked) _possibleItemSpawns.Remove(filterList[i]); break;
+                case WeaponType.Assault:
+                    if (script.weaponManager.assaultUnlocked) _possibleItemSpawns.Remove(filterList[i]); break;
+                case WeaponType.Shotgun:
+                    if (script.weaponManager.shotgunUnlocked) _possibleItemSpawns.Remove(filterList[i]); break;
+            }
+        }
+        Debug.Log("Item Room possible Item Spawns: " + _possibleItemSpawns.Count);
         Room room = GetComponent<Room>();
-        Debug.Log("ROOM " + room);
+        if (_possibleItemSpawns.Count == 0)
+        {
+            // Do not spawn any pickup
+            return;
+        }
         for (int i = 0; i < _positions.Count; i++)
         {
             int rIdx = Random.Range(0, _possibleItemSpawns.Count);

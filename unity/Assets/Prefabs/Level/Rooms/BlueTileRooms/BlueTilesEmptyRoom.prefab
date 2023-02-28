@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5118683046855437364, guid: dec464a6341813b4a9403e6ccb40b736, type: 3}
       propertyPath: m_Name
-      value: BlueTilesRoom
+      value: BlueTilesEmptyRoom
       objectReference: {fileID: 0}
     - target: {fileID: 5118683046855437515, guid: dec464a6341813b4a9403e6ccb40b736, type: 3}
       propertyPath: m_RootOrder

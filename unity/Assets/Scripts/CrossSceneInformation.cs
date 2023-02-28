@@ -21,7 +21,7 @@ public static class CrossSceneInformation
 
     public static void ResetValues()
     {
-        MaxLevel = 1; // TODO: Change to higher value
+        MaxLevel = 3; // TODO: Change to higher value
         Level = 1;
 
         PlayerHealth = 100;
