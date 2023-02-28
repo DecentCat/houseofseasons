@@ -194,7 +194,7 @@ public class Level : MonoBehaviour
         else
         {
             // TODO: End Cutscene
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene("GameOver");
         }
     }
 }
