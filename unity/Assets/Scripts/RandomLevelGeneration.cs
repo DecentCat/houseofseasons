@@ -40,7 +40,6 @@ public class RandomLevelGeneration : MonoBehaviour
         _funcQueue.Clear();
         int roomsLeft = _howManyRoomsTotal;
         Room startRoom = GetComponentInChildren<Room>();
-        _blockedPos.Add(startRoom.transform.position);
         GenerateRoomsRecursive(roomsLeft, startRoom, startRoom.transform.position, -1, true, true);
     }
 
@@ -54,7 +53,7 @@ public class RandomLevelGeneration : MonoBehaviour
                                 bool generateExit, bool generateItem)
     {
         roomsLeft -= 1;
-        //_blockedPos.Add(coords);
+        _blockedPos.Add(coords);
         if (roomsLeft <= 0)
         {
             return;
@@ -152,12 +151,10 @@ public class RandomLevelGeneration : MonoBehaviour
                         dir = 1;
                         break;
                 }
-                Debug.Log("Position check: " + pos + " " + _blockedPos.Count);
                 if (_blockedPos.Contains(pos))
                 {
                     amtOpenDoors--;
                     // EDGE CASE: force taken last door, but blocked. hopefully that never happens
-                    continue;
                 }
                 else
                 {
@@ -171,7 +168,7 @@ public class RandomLevelGeneration : MonoBehaviour
         {
             Debug.LogError("Something went wrong with level generation!");
         }
-        Debug.Log("Generating rooms, amtOpenDoors = " + amtOpenDoors + ", positions = " + positions.Count);
+        Debug.Log("Generating rooms, amtOpenDoors = " + amtOpenDoors + ", positions = " + positions);
         if (fromDir >= 0)
         {
             room.type = (Room.RoomType) roomTypeInt;
@@ -216,7 +213,7 @@ public class RandomLevelGeneration : MonoBehaviour
                 toGenerate = _possibleRooms[roomIdx];
             }
             Room childObj = Instantiate<Room>(toGenerate, pos, Quaternion.identity, _grid.transform);
-            Debug.Log("Call new room " + childObj.name + " = " + howMany + " " + pos + " " + _blockedPos.Count + " " + fromDirs[i] + " " + generateExit);
+            Debug.Log("Call new room " + howMany + " " + pos + " " + _blockedPos.Count + " " + fromDirs[i] + " " + generateExit);
             Debug.Log("Exit " + i + " " + exitRoomIdx);
             int fromdir = fromDirs[i];
             int newRoomType = 0;
@@ -228,7 +225,6 @@ public class RandomLevelGeneration : MonoBehaviour
                 case 3: newRoomType |= 8; break;
             }
             childObj.type = (Room.RoomType) newRoomType;
-            _blockedPos.Add(pos);
             _funcQueue.Enqueue(() => GenerateRoomsRecursive(howMany, childObj, pos, fromdir, isExitThere, isItemThere));
         }
         while (_funcQueue.Count > 0)
