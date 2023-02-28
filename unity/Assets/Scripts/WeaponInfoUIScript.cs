@@ -19,7 +19,7 @@ public class WeaponInfoUIScript : MonoBehaviour
 
     private void Awake()
     {
-        activeIcon = gameObject.transform.Find("WeaponIcon").GetComponent<Image>();
+        activeIcon = gameObject.transform.Find("WeaponIcon").GetComponent<UnityEngine.UI.Image>();
         activeText = gameObject.transform.Find("AmmoCountText").GetComponent<TextMeshProUGUI>();
     }
 

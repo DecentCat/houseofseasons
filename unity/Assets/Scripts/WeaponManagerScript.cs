@@ -69,7 +69,7 @@ public class WeaponManagerScript : MonoBehaviour
         if (shotgunUnlocked) { weapons.Add(shotgun); }
         if (laserUnlocked) { weapons.Add(laser); }
 
-        weaponInfoUIScript.SetWeaponActive(WeaponType.Primary, primaryWeapon.GetBullets);
+        // weaponInfoUIScript.SetWeaponActive(WeaponType.Primary, primaryWeapon.GetBullets);
     }
 
     private WeaponType GetTypeByIndex(int index)
