@@ -5,10 +5,9 @@ using Wilberforce;
 
 public class SceneNavigator : MonoBehaviour
 {
-    [SerializeField] static SceneNavigator Instance;
+    [SerializeField] public static SceneNavigator Instance;
     private static string previousSceneName;
     [SerializeField] GameObject MainCamera;
-
     private void Awake()
     {
         if (Instance != null)
@@ -39,6 +38,7 @@ public class SceneNavigator : MonoBehaviour
     {
         MainCamera.GetComponent<Colorblind>().Type = PlayerPrefs.GetInt(Constants.COLOUR_MODE_PREF_KEY);
         AudioListener.volume = PlayerPrefs.GetFloat(Constants.VOLUME_PREF_KEY);
+        //TODO LOAD Player stats 
     }
 
     public void QuitGame()
