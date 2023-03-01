@@ -7,6 +7,7 @@ public class PlayerScript : MonoBehaviour
     // Player stats
     public int health = 100;
     public int maxHealth = 100;
+    public Healthbar healthbar;
     public float movementSpeed = 5f;
     public float shotBuffer = 0.5f;
 
@@ -25,6 +26,8 @@ public class PlayerScript : MonoBehaviour
         _level = GetComponentInParent<Level>();
         health = CrossSceneInformation.PlayerHealth;
         maxHealth = CrossSceneInformation.PlayerMaxHealth;
+        healthbar.SetUiMaxHealth(maxHealth);
+        healthbar.SetUiHealth(maxHealth);
     }
 
     void Update()
@@ -78,6 +81,7 @@ public class PlayerScript : MonoBehaviour
     public void TakeDamage(int damage, Vector2 knockbackDirection)
     {
         health -= damage;
+        healthbar.SetUiHealth(health);
 
         rb.MovePosition(rb.position + knockbackDirection * (damage * 2) * Time.fixedDeltaTime);
 
