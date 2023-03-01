@@ -19,6 +19,7 @@ public class PlayerScript : MonoBehaviour
 
     public WeaponManagerScript weaponManager;
     private Level _level;
+    public SpriteRenderer rend;
 
     private void Awake()
     {
@@ -90,11 +91,32 @@ public class PlayerScript : MonoBehaviour
             Destroy(gameObject);
             _level.LevelQuit(this, true);
         }
+
+        Flicker();
     }
 
     public void HealDamage(int healing)
     {
         health += healing;
         health = health > maxHealth ? maxHealth : health;
+        healthbar.SetUiHealth(health);
+    }
+
+    private void Flicker()
+    {
+        Invoke("RenderRed", 0f);
+        Invoke("RenderNormal", 0.1f);
+        Invoke("RenderRed", 0.15f);
+        Invoke("RenderNormal", 0.2f);
+    }
+
+    private void RenderRed()
+    {
+        rend.color = new Color(1, 0, 0, 1);
+    }
+
+    private void RenderNormal()
+    {
+        rend.color = new Color(1, 1, 1, 1);
     }
 }

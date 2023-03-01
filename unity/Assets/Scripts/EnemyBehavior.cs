@@ -15,6 +15,7 @@ public class EnemyBehavior : MonoBehaviour
     public bool melee = true;
     public float attackDistance = 1f;
     public int attackPower = 5;
+    public SpriteRenderer rend;
 
     GameObject[] players;
     Vector2 movementDirection;
@@ -166,5 +167,26 @@ public class EnemyBehavior : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        Flicker();
+    }
+
+
+    private void Flicker()
+    {
+        Invoke("RenderRed", 0f);
+        Invoke("RenderNormal", 0.1f);
+        Invoke("RenderRed", 0.15f);
+        Invoke("RenderNormal", 0.2f);
+    }
+
+    private void RenderRed()
+    {
+        rend.color = new Color(1, 0, 0, 1);
+    }
+
+    private void RenderNormal()
+    {
+        rend.color = new Color(1, 1, 1, 1);
     }
 }
