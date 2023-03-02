@@ -29,6 +29,8 @@ public class ChatManager : MonoBehaviour
         namepoolXml.LoadXml(namepool.text);
         TextAsset messagepool = Resources.Load("messagepool") as TextAsset;
         messagepoolXml.LoadXml(messagepool.text);
+
+        PostChatMessage("moderator_cat", "Welcome to the chat, please stay resprectful and have fun :)");
     }
 
     
