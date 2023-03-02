@@ -44,9 +44,14 @@ public class LaserScript : MonoBehaviour
                     charge -= 1f;
                 }
 
+                RandomItemPickup itemPickup;
                 if (hit.collider.tag == "Enemy")
                 {
                     hit.collider.gameObject.GetComponent<EnemyBehavior>().TakeDamage(damage, new Vector2(0, 0));
+                }
+                else if (hit.collider.gameObject.tag != "Enemy" && hit.collider.gameObject.TryGetComponent<RandomItemPickup>(out itemPickup))
+                {
+                    itemPickup.PlacePickup(true);
                 }
 
                 doDamage = false;
