@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/BlueLevelScene.unity
     guid: 188ecfc8f5fccc542896d165d5505db5
   - enabled: 1
-    path: Assets/Scenes/RandomBlueLevelScene.unity
+    path: Assets/Scenes/SceneWithHealthbar.unity
     guid: 2d0ff3f60fbb41d4a99d90cebfcd4af6
   - enabled: 1
     path: Assets/Scenes/OptionsMenu.unity
