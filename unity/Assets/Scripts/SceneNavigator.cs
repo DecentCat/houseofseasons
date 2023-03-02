@@ -38,7 +38,7 @@ public class SceneNavigator : MonoBehaviour
     {
         MainCamera.GetComponent<Colorblind>().Type = PlayerPrefs.GetInt(Constants.COLOUR_MODE_PREF_KEY);
         AudioListener.volume = PlayerPrefs.GetFloat(Constants.VOLUME_PREF_KEY);
-        //TODO LOAD Player stats 
+        //TODO LOAD Player stats  
     }
 
     public void QuitGame()
