@@ -28,7 +28,7 @@ public class PlayerScript : MonoBehaviour
         health = CrossSceneInformation.PlayerHealth;
         maxHealth = CrossSceneInformation.PlayerMaxHealth;
         healthbar.SetUiMaxHealth(maxHealth);
-        healthbar.SetUiHealth(maxHealth);
+        healthbar.SetUiHealth(health);
     }
 
     void Update()
