@@ -135,7 +135,7 @@ Animator:
   m_GameObject: {fileID: 8860731934821648479}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b4a77bfc610a4e04ea233ae629677e6f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7600a3ecc50cf8d4ca33ee1c0f2c99c3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -166,3 +166,4 @@ MonoBehaviour:
   melee: 1
   attackDistance: 1
   attackPower: 10
+  rend: {fileID: 8860731934821648466}

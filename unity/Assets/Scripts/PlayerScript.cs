@@ -7,6 +7,7 @@ public class PlayerScript : MonoBehaviour
     // Player stats
     public int health = 100;
     public int maxHealth = 100;
+    public Healthbar healthbar;
     public float movementSpeed = 5f;
     public float shotBuffer = 0.5f;
 
@@ -18,6 +19,7 @@ public class PlayerScript : MonoBehaviour
 
     public WeaponManagerScript weaponManager;
     private Level _level;
+    public SpriteRenderer rend;
 
     private void Awake()
     {
@@ -25,6 +27,8 @@ public class PlayerScript : MonoBehaviour
         _level = GetComponentInParent<Level>();
         health = CrossSceneInformation.PlayerHealth;
         maxHealth = CrossSceneInformation.PlayerMaxHealth;
+        healthbar.SetUiMaxHealth(maxHealth);
+        healthbar.SetUiHealth(maxHealth);
     }
 
     void Update()
@@ -78,6 +82,7 @@ public class PlayerScript : MonoBehaviour
     public void TakeDamage(int damage, Vector2 knockbackDirection)
     {
         health -= damage;
+        healthbar.SetUiHealth(health);
 
         rb.MovePosition(rb.position + knockbackDirection * (damage * 2) * Time.fixedDeltaTime);
 
@@ -86,11 +91,32 @@ public class PlayerScript : MonoBehaviour
             Destroy(gameObject);
             _level.LevelQuit(this, true);
         }
+
+        Flicker();
     }
 
     public void HealDamage(int healing)
     {
         health += healing;
         health = health > maxHealth ? maxHealth : health;
+        healthbar.SetUiHealth(health);
+    }
+
+    private void Flicker()
+    {
+        Invoke("RenderRed", 0f);
+        Invoke("RenderNormal", 0.1f);
+        Invoke("RenderRed", 0.15f);
+        Invoke("RenderNormal", 0.2f);
+    }
+
+    private void RenderRed()
+    {
+        rend.color = new Color(1, 0, 0, 1);
+    }
+
+    private void RenderNormal()
+    {
+        rend.color = new Color(1, 1, 1, 1);
     }
 }

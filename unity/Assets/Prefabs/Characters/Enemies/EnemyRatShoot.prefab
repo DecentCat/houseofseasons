@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 11
-  m_Sprite: {fileID: -1474346680, guid: 450838f837a84ad4ba92d5553fa29f28, type: 3}
+  m_Sprite: {fileID: -1334659259, guid: 2aa9cc6716a8c67459488e685be362b2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -167,6 +167,7 @@ MonoBehaviour:
   melee: 0
   attackDistance: 4
   attackPower: 5
+  rend: {fileID: 7804953557101016581}
 --- !u!1001 &7804953556592893067
 PrefabInstance:
   m_ObjectHideFlags: 0

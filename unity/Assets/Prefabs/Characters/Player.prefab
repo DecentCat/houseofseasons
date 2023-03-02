@@ -165,11 +165,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 100
+  healthbar: {fileID: 0}
   movementSpeed: 5
   shotBuffer: 0.5
   rb: {fileID: 2039969185222439997}
   animator: {fileID: 2039969185222439994}
   weaponManager: {fileID: 0}
+  rend: {fileID: 2039969185222439996}
 --- !u!114 &2918958622896361126
 MonoBehaviour:
   m_ObjectHideFlags: 0
