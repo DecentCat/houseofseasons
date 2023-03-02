@@ -8,12 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: c178c24475e7c8945a336acafbd4e6fd
-  - enabled: 0
-    path: Assets/Scenes/LevelScene.unity
-    guid: 7f2796a086aa79c40b7a83ace96f285b
-  - enabled: 0
-    path: Assets/Scenes/BlueLevelScene.unity
-    guid: 188ecfc8f5fccc542896d165d5505db5
   - enabled: 1
     path: Assets/Scenes/SceneWithHealthbar.unity
     guid: 2d0ff3f60fbb41d4a99d90cebfcd4af6
@@ -23,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: f5ea99ed7c1d05f4caa957ad8573fddb
+  - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: 3f74393cd73a59949bd40b3b2c266bae
   m_configObjects: {}

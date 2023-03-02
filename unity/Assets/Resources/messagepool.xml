@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- These prompts were generated with ChatGPT by OpenAI-->
+<messagepool>
+    <hello>
+        <message>Hey there, just joined, what game are you playing?</message>
+        <message>Hi kitty! What's going on in the game right now?</message>
+        <message>Hello, just found your stream! How's it going?</message>
+        <message>I'm new here, what's been happening so far in the game?</message>
+        <message>Hi, I'm new! What's your name, kitty?</message>
+        <message>Just joined, looks like you're doing great in the game!</message>
+        <message>Hey, I'm new here, what's your favorite thing about this game?</message>
+        <message>Hi kitty, just popped in to say hello!</message>
+        <message>New viewer here, what kind of game is this?</message>
+        <message>Hello, just found your channel! How long have you been playing this game?</message>
+        <message>Hey, what's up? I'm new, can you catch me up on the game?</message>
+        <message>New viewer here, do you have any tips for playing this game?</message>
+        <message>Hey kitty, just joined, what's the objective of the game?</message>
+        <message>Hi, just stumbled upon your stream, how's it going?</message>
+        <message>New viewer here, what level are you on in the game?</message>
+        <message>Hey, I'm new here! Do you have any favorite parts of the game?</message>
+        <message>Just joined, looks like you're having fun playing the game!</message>
+        <message>Hi kitty, I'm new here, what's your favorite weapon in the game?</message>
+        <message>Hey there, just found your stream, what's the game about?</message>
+        <message>New viewer here, what do you think of the game so far?</message>
+    </hello>
+    <hello type="short">
+        <message>Hello!</message>
+        <message>Hi everyone!</message>
+        <message>Hallihallo :D</message>
+        <message>Hiiii yall!</message>
+        <message>Hello guys, what's up?</message>
+        <message>Heyyyy :D</message>
+        <message>Hey folks!</message>
+        <message>What game are you playing?</message>
+        <message>Hey kitty! What's happening in the game?</message>
+        <message>Hi, how's it going?</message>
+        <message>What's been happening in the game so far?</message>
+        <message>What's your name, kitty?</message>
+        <message>Looks like you're doing great in the game!</message>
+        <message>What's your favorite thing about this game?</message>
+        <message>Hi kitty, just saying hello!</message>
+        <message>What kind of game is this?</message>
+        <message>How long have you been playing?</message>
+        <message>Can you catch me up on the game?</message>
+        <message>Do you have any tips for playing?</message>
+        <message>What's the objective of the game?</message>
+        <message>How's it going?</message>
+        <message>What level are you on?</message>
+        <message>Do you have any favorite parts of the game?</message>
+        <message>Looks like you're having fun playing!</message>
+        <message>What's your favorite weapon in the game?</message>
+        <message>What's the game about?</message>
+        <message>What do you think of the game so far?</message>
+    </hello>
+    <generic>
+        <message>Go, kitty, go! Take down those monsters!</message>
+        <message>I'm so impressed by how good this cat is at gaming!</message>
+        <message>I can't believe how entertaining this is to watch.</message>
+        <message>Who needs humans playing games anymore?</message>
+        <message>That was a close one! I was on the edge of my seat watching that battle.</message>
+        <message>I love how the cat is taking its time exploring the levels. So cute!</message>
+        <message>I think our feline friend is better at this game than I am...</message>
+        <message>Who knew cats could be such talented gamers?</message>
+        <message>It's amazing how much personality this cat brings to the game. Love it!</message>
+        <message>This cat is a true adventurer. I'm rooting for them!</message>
+        <message>This is the most fun I've had watching a live stream in a long time. Thank you, cat!</message>
+        <message>I can't wait to see what kind of loot the cat finds next!</message>
+        <message>I think this cat needs its own Twitch channel. I'd watch it all the time.</message>
+        <message>I'm so impressed by the cat's gaming skills. They should host a masterclass.</message>
+        <message>This cat is giving me serious gaming envy. Maybe I need to step up my own skills!</message>
+        <message>I love how this cat seems to be enjoying the game as much as we are.</message>
+        <message>This cat is a true warrior! I wouldn't want to mess with them in a dark alley...</message>
+        <message>I'm so invested in this cat's journey. Will they make it to the end?</message>
+        <message>I'm really enjoying the relaxing atmosphere of this stream. It's nice to watch the cat play and unwind.</message>
+        <message>I think our furry friend has found their calling. They should be a professional gamer!</message>
+        <message>I'm really glad I stumbled upon this stream. It's the best thing I've watched all week.</message>
+        <message>This cat is a natural at this game. They make it look so easy!</message>
+        <message>I can't get enough of this adorable cat playing a video game. Too cute!</message>
+        <message>This cat is an inspiration. Maybe I should adopt a cat and train them to be a gaming partner...</message>
+        <message>I love how this cat is taking on the boss battles. They have no fear!</message>
+        <message>I'm amazed by how much this cat is engaging with the game. They seem really invested in their progress.</message>
+        <message>I think we just witnessed a legendary play from the cat. That was amazing!</message>
+        <message>This is my new favorite stream. I could watch this cat play games all day!</message>
+        <message>I love the chill vibes of this stream. It's so relaxing to watch the cat play.</message>
+        <message>This cat is a true hero. They're fighting for their virtual life down there!</message>
+        <message>I'm so invested in this cat's story. I can't wait to see how it all ends.</message>
+        <message>I think this cat is officially my new gaming idol. Move over, human gamers!</message>
+        <message>I can't believe how much I'm enjoying this stream. The cat is such a great host!</message>
+        <message>This cat is a natural entertainer. They know how to keep us all engaged and interested in their gameplay.</message>
+        <message>I'm rooting for this cat to make it all the way to the end. They've come so far already!</message>
+        <message>This cat is putting all other cats to shame with their impressive gaming skills.</message>
+        <message>I never knew watching a cat play a game could be so enjoyable. Thanks for the stream, kitty!</message>
+        <message>I love the way this cat is strategizing and problem-solving. They're a true mastermind.</message>
+        <message>This is such a unique stream. I love that we get to watch a cat's journey through a video game.</message>
+        <message>I can't believe how invested I am in this cat's progress. Go kitty, go!</message>
+        <message>This cat is giving me all kinds of inspiration for my own gaming. I need to step up my strategy game!</message>
+    </generic>
+    <generic type="short">
+        <message>This is epic!</message>
+        <message>Go cat go!</message>
+        <message>Loving the gameplay!</message>
+        <message>So cute!</message>
+        <message>This cat is killing it!</message>
+        <message>I'm so invested.</message>
+        <message>Awesome skills!</message>
+        <message>Cat power!</message>
+        <message>Pure entertainment.</message>
+        <message>I'm hooked!</message>
+        <message>The cat is a pro.</message>
+        <message>Incredible gameplay.</message>
+        <message>So much fun to watch.</message>
+        <message>I'm blown away.</message>
+        <message>I can't stop watching.</message>
+        <message>Unreal skills!</message>
+        <message>This is too good.</message>
+        <message>Love the vibes.</message>
+        <message>I'm impressed!</message>
+        <message>Cat-tastic!</message>
+        <message>This cat is a natural!</message>
+        <message>So much talent!</message>
+        <message>Go kitty, go!</message>
+        <message>I'm loving this gameplay.</message>
+        <message>This cat is a true gamer.</message>
+        <message>I'm hooked on this stream.</message>
+        <message>The cat is on fire!</message>
+        <message>This is amazing to watch.</message>
+        <message>I can't get enough!</message>
+        <message>So entertaining!</message>
+        <message>The cat is killing it!</message>
+        <message>So much action!</message>
+        <message>I'm loving the cat's strategy.</message>
+        <message>What a legend!</message>
+        <message>This cat is my new hero.</message>
+        <message>So much cat-titude!</message>
+        <message>I'm mesmerized by this stream.</message>
+        <message>The cat is a boss!</message>
+        <message>This is the best stream ever!</message>
+        <message>I could watch this all day!</message>
+    </generic>
+    <sad>
+        <message>This cat is so cute, even when they struggle with the game.</message>
+        <message>It's okay kitty, you'll get better with more practice!</message>
+        <message>I love watching this cat play, even if they struggle sometimes.</message>
+        <message>This cat is doing their best, and that's all that matters.</message>
+        <message>I enjoy watching this cat play, even if they're not the best gamer.</message>
+        <message>It's so adorable to see this cat try their best at the game.</message>
+        <message>This cat brings a unique perspective to the game that's refreshing to see.</message>
+        <message>I appreciate the effort this cat puts into playing the game.</message>
+        <message>It's fun to watch this cat explore and discover the game world.</message>
+        <message>I'm glad this cat is having fun playing the game, that's all that matters.</message>
+        <message>This cat is so cute, even when they don't quite understand the game mechanics.</message>
+        <message>I love how this cat is enjoying the game, regardless of their skill level.</message>
+        <message>It's heartwarming to see this cat bond with the game character they're playing.</message>
+        <message>I'm rooting for this cat to succeed, even if they struggle a bit.</message>
+        <message>This cat may not be the best gamer, but they bring a lot of personality to the game.</message>
+        <message>It's great to see this cat try new things in the game and push their limits.</message>
+        <message>I admire the perseverance this cat shows, even when the game is tough.</message>
+        <message>This cat may not be a pro gamer, but they have a lot of heart and that's what counts.</message>
+        <message>I'm impressed by how well this cat is doing, considering they're not used to playing games.</message>
+        <message>I appreciate the unique perspective this cat brings to the game, it's a lot of fun to watch.</message>
+    </sad>
+    <sad type="short">
+        <message>This cat is so cute trying to play!</message>
+        <message>Kitty, you'll get better with practice!</message>
+        <message>Love watching this cat play!</message>
+        <message>This cat is doing their best.</message>
+        <message>Fun to watch this cat explore the game.</message>
+        <message>I enjoy this cat's perspective on the game.</message>
+        <message>This cat brings a unique twist to the game.</message>
+        <message>I appreciate this cat's effort in the game.</message>
+        <message>So adorable to see this cat try their best.</message>
+        <message>This cat is having fun playing, that's all that matters.</message>
+        <message>This cat is cute, even when they don't understand the game.</message>
+        <message>Love how this cat enjoys the game.</message>
+        <message>Heartwarming to see this cat bond with the game character.</message>
+        <message>Rooting for this cat to succeed.</message>
+        <message>This cat brings a lot of personality to the game.</message>
+        <message>Impressed by how well this cat is doing.</message>
+        <message>Love the perseverance this cat shows.</message>
+        <message>This cat has a lot of heart, that's what counts.</message>
+        <message>Great to see this cat try new things in the game.</message>
+        <message>This cat's unique perspective is so much fun to watch.</message>
+    </sad>
+    <angry>
+        <message>This is so boring. I'm out.</message>
+        <message>Why is this even a thing? I don't get it.</message>
+        <message>This cat is terrible at this game. I can't watch this anymore.</message>
+        <message>This is a waste of time. I'm unsubscribing.</message>
+        <message>This is not what I signed up for. I want real gameplay, not a cat playing a video game.</message>
+        <message>I can't believe people actually enjoy this. It's so stupid.</message>
+        <message>The cat is cute, but this stream is not worth my time.</message>
+        <message>I'm so disappointed. I was hoping for something better than this.</message>
+        <message>I'm so bored. Can we please watch something else?</message>
+        <message>This cat doesn't even know what they're doing. It's painful to watch.</message>
+        <message>This stream is a joke. I can't believe I wasted my time on this.</message>
+        <message>I'd rather watch paint dry than watch this cat play a video game.</message>
+        <message>This is so lame. How is anyone actually entertained by this?</message>
+        <message>I'm sorry, but this is not my cup of tea. I'm tuning out.</message>
+        <message>This cat is not a real gamer. They're just messing around.</message>
+        <message>I don't understand how anyone could enjoy this. It's so stupid.</message>
+        <message>I thought this would be cute, but it's just boring.</message>
+        <message>This cat is not entertaining at all. They're just staring at the screen.</message>
+        <message>This is the worst stream I've ever watched. I regret tuning in.</message>
+        <message>I can't take it anymore. I'm done with this stream.</message>
+        <message>This cat is terrible at playing games. It's so frustrating to watch.</message>
+        <message>I can't believe this cat is so bad at gaming. It's embarrassing.</message>
+        <message>The cat's lack of gaming skills is ruining the gameplay experience.</message>
+        <message>This cat should stick to sleeping and leave the gaming to humans.</message>
+        <message>I'm so bored of watching this cat play. It's not entertaining at all.</message>
+        <message>It's painful to watch this cat fail at every level. They have no gaming talent.</message>
+        <message>The cat's gameplay is so slow and unresponsive. It's ruining the experience.</message>
+        <message>This cat clearly has no idea what they're doing. It's just painful to watch.</message>
+        <message>The cat is so bad at gaming, it's like they're playing with their paws tied together.</message>
+        <message>This cat is ruining the game. They're not even trying to play properly.</message>
+        <message>Watching this cat play is like watching paint dry. It's just so boring.</message>
+        <message>This cat is clearly not a serious gamer. They're just messing around.</message>
+        <message>I'm so disappointed with this cat's gaming skills. It's just not good enough.</message>
+        <message>The cat is ruining the immersion of the game. They're just not taking it seriously.</message>
+        <message>I'd rather watch a cat sleep than watch this cat play games. It's just so bad.</message>
+        <message>This cat is clearly not cut out for gaming. It's just not their thing.</message>
+        <message>Watching this cat play is like watching a train wreck. It's just a disaster.</message>
+        <message>The cat's gameplay is so bad, it's like they're not even trying.</message>
+        <message>This cat is not entertaining at all. They're just ruining the game.</message>
+        <message>It's so frustrating to watch this cat fail over and over again. They're just not cut out for gaming.</message>
+    </angry>
+</messagepool>

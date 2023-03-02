@@ -49,9 +49,10 @@ MonoBehaviour:
   layersToHit:
     serializedVersion: 2
     m_Bits: 385
-  damage: 1
+  damage: 5
   charge: 100
   infiniteCharge: 0
+  maxCharge: 100
 --- !u!120 &4614490904865872888
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -103,8 +104,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.5013987
-        value: 0.24050882
+        time: 0.6857666
+        value: 0.29710996
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -117,7 +118,7 @@ LineRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 1, g: 0.21226418, b: 0.3856294, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 0.7028302, b: 0.7028302, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}

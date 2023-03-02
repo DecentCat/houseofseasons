@@ -162,7 +162,7 @@ MonoBehaviour:
   movementSpeed: 3
   awareDistance: 4
   spawnPointDistance: 2
-  health: 100
+  health: 20
   melee: 1
   attackDistance: 1
   attackPower: 10

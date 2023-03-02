@@ -1,0 +1,205 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<namepool>
+    <predefined>
+        <username>SirMartyMcFly1113</username>
+        <username>spicyPickleXL</username>
+        <username>hotMayoQueen5</username>
+        <username>WitchQueenZoey</username>
+        <username>lazydogzzZZ</username>
+        <username>ilovehotpotatoe112</username>
+        <username>NoodlepoodlexD</username>
+        <username>crazykittyOwO</username>
+        <username>cheekyAlex09</username>
+        <username>KingBillUSA</username>
+        <username>britishsassysausage74</username>
+        <username>bossbaby01</username>
+        <username>fluffyCapibara99</username>
+    </predefined>
+    <generator>
+        <nameList>
+            <name gender="m">ralph</name>
+            <name gender="m">hank</name>
+            <name gender="m">ivar</name>
+            <name gender="m">ivan</name>
+            <name gender="m">tyler</name>
+            <name gender="m">paul</name>
+            <name gender="m">kermit</name>
+            <name gender="m">bob</name>
+            <name gender="m">frank</name>
+            <name gender="m">elvis</name>
+            <name gender="m">mike</name>
+            <name gender="m">luke</name>
+            <name gender="m">bill</name>
+            <name gender="m">greg</name>
+            <name gender="m">tim</name>
+            <name gender="m">tom</name>
+            <name gender="m">chad</name>
+            <name gender="m">garfield</name>
+            <name gender="m">morice</name>
+            <name gender="m">john</name>
+            <name gender="m">dan</name>
+            <name gender="m">david</name>
+
+            <name gender="n">billy</name>
+            <name gender="n">billi</name>
+            <name gender="n">jessy</name>
+            <name gender="n">nix</name>
+            <name gender="n">sam</name>
+            <name gender="n">alex</name>
+            <name gender="n">lois</name>
+            <name gender="n">louie</name>
+
+            <name gender="f">kate</name>
+            <name gender="f">ivanka</name>
+            <name gender="f">anya</name>
+            <name gender="f">anna</name>
+            <name gender="f">beccy</name>
+            <name gender="f">becca</name>
+            <name gender="f">sky</name>
+            <name gender="f">daisy</name>
+            <name gender="f">shushu</name>
+            <name gender="f">may</name>
+            <name gender="f">julia</name>
+            <name gender="f">sophie</name>
+            <name gender="f">veronica</name>
+            <name gender="f">betty</name>
+            <name gender="f">angie</name>
+            <name gender="f">angela</name>
+            <name gender="f">pamela</name>
+            <name gender="f">pam</name>
+            <name gender="f">zoey</name>
+        </nameList>
+        <nounList>
+            <noun gender="m" type="title">king</noun>
+            <noun gender="m" type="title">lord</noun>
+            <noun gender="m" type="title">master</noun>
+            <noun gender="m" type="title">count</noun>
+            <noun gender="m" type="title">duke</noun>
+            <noun gender="m" type="title">sir</noun>
+            <noun gender="m">boss</noun>
+            <noun gender="m">boy</noun>
+            <noun gender="m">man</noun>
+
+            <noun gender="f" type="title">queen</noun>
+            <noun gender="f" type="title">princess</noun>
+            <noun gender="f" type="title">countess</noun>
+            <noun gender="f" type="title">empress</noun>
+            <noun gender="f" type="title">lady</noun>
+            <noun gender="f">maid</noun>
+            <noun gender="f">kitty</noun>
+            <noun gender="f">witch</noun>
+
+            <noun>minion</noun>
+            <noun>president</noun>
+            <noun>robot</noun>
+            <noun>hotdog</noun>
+            <noun>apple</noun>
+            <noun>pony</noun>
+            <noun>pumpkin</noun>
+            <noun>caramel</noun>
+            <noun>sugar</noun>
+            <noun>baby</noun>
+            <noun>pizza</noun>
+            <noun>brain</noun>
+            <noun>banana</noun>
+            <noun>ronin</noun>
+            <noun>coconut</noun>
+            <noun>tomato</noun>
+            <noun>plum</noun>
+            <noun>noodle</noun>
+            <noun>poodle</noun>
+            <noun>gangster</noun>
+            <noun>thriller</noun>
+            <noun>cat</noun>
+            <noun>dog</noun>
+            <noun>ostrich</noun>
+            <noun>penguin</noun>
+            <noun>capybara</noun>
+            <noun>genius</noun>
+            <noun>mastermind</noun>
+            <noun>megamind</noun>
+            <noun>dragon</noun>
+            <noun>horsey</noun>
+            <noun>duck</noun>
+            <noun>elite</noun>
+            <noun>pickle</noun>
+            <noun>mayo</noun>
+            <noun>lasagna</noun>
+            <noun>sausage</noun>
+        </nounList>
+        <adjectiveList>
+            <adjective>green</adjective>
+            <adjective>blue</adjective>
+            <adjective>red</adjective>
+            <adjective>mad</adjective>
+            <adjective>bad</adjective>
+            <adjective>bald</adjective>
+            <adjective>cheeky</adjective>
+            <adjective>hot</adjective>
+            <adjective>best</adjective>
+            <adjective>good</adjective>
+            <adjective>cool</adjective>
+            <adjective>minty</adjective>
+            <adjective>kinky</adjective>
+            <adjective>sad</adjective>
+            <adjective>happy</adjective>
+            <adjective>fluffy</adjective>
+            <adjective>tiny</adjective>
+            <adjective>big</adjective>
+            <adjective>fat</adjective>
+            <adjective>royal</adjective>
+            <adjective>twilight</adjective>
+            <adjective>shy</adjective>
+            <adjective>sweet</adjective>
+            <adjective>creamy</adjective>
+            <adjective>delicious</adjective>
+            <adjective>spicy</adjective>
+            <adjective>wild</adjective>
+            <adjective>crazy</adjective>
+            <adjective>great</adjective>
+            <adjective>greek</adjective>
+            <adjective>german</adjective>
+            <adjective>english</adjective>
+            <adjective>super</adjective>
+            <adjective>mega</adjective>
+            <adjective>giga</adjective>
+            <adjective>lazy</adjective>
+            <adjective>sassy</adjective>
+            <adjective>angry</adjective>
+        </adjectiveList>
+        <prefixList>
+            <prefix>ilove</prefix>
+            <prefix>iam</prefix>
+            <prefix>iwant</prefix>
+            <prefix>hello</prefix>
+        </prefixList>
+        <postfixList casesensitive="true">
+            <postfix>UxU</postfix>
+            <postfix>uwu</postfix>
+            <postfix>ovo</postfix>
+            <postfix>owo</postfix>
+            <postfix>X</postfix>
+            <postfix>zzZZ</postfix>
+            <postfix>007</postfix>
+            <postfix>187</postfix>
+            <postfix>miau</postfix>
+            <postfix>rawwr</postfix>
+            <postfix>honk</postfix>
+            <postfix>BingBong</postfix>
+            <postfix>bruh</postfix>
+            <postfix>01</postfix>
+            <postfix>alpha</postfix>
+            <postfix>404</postfix>
+            <postfix>101</postfix>
+            <postfix>1337</postfix>
+            <postfix>lol</postfix>
+            <postfix>xD</postfix>
+            <postfix>yay</postfix>
+            <postfix>Oof</postfix>
+            <postfix>bruh</postfix>
+            <postfix>GoGoGo</postfix>
+            <postfix>xl</postfix>
+            <postfix>USA</postfix>
+        </postfixList>
+    </generator>
+</namepool>
