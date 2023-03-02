@@ -8,6 +8,8 @@ public class SceneNavigator : MonoBehaviour
     [SerializeField] public static SceneNavigator Instance;
     private static string previousSceneName;
     [SerializeField] GameObject MainCamera;
+    private static bool gamepaused = false;
+
     private void Awake()
     {
         if (Instance != null)
@@ -30,6 +32,14 @@ public class SceneNavigator : MonoBehaviour
     public void GoToScene(string name)
     {
         previousSceneName = SceneManager.GetActiveScene().name;
+        if (previousSceneName == "SceneWithHealthbar" && name == "OptionsMenu")
+        {
+            gamepaused = true;
+        }
+        else
+        {
+            gamepaused = false;
+        }
         SceneManager.LoadScene(name);
         LoadPlayerPrefs();
     }
