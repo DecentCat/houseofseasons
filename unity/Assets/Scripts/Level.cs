@@ -180,7 +180,14 @@ public class Level : MonoBehaviour
 
     public void LevelQuit(PlayerScript player, bool death)
     {
-        SceneManager.LoadScene("GameOver");
+        if (death)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
+        else
+        {
+            SceneManager.LoadScene("EndStoryScene");
+        }
     }
 
     public void LevelQuit(PlayerScript player)
@@ -201,7 +208,7 @@ public class Level : MonoBehaviour
         else
         {
             // TODO: End Cutscene
-            SceneManager.LoadScene("GameOver");
+            LevelQuit(player, false);
         }
     }
 }
