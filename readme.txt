@@ -1,4 +1,3 @@
-# House of Fame
 (1) Short Game Description
 House of Fame is a 2D action rogue like game, where a cat needs to defeat enemies in order to become a famous social media star. Multiple levels are in place and the goal is to get to the last level.
 This game is similarly structured as the game "The Binding of Isaac".
@@ -12,7 +11,6 @@ Seiser Maria 1181221
 
 (3) Technologies used
 WebGL, Unity, Visual Studio, Procreate, Adobe Photoshop
-Unity Version: 2021.3.15f1
 
 (4) Credits
 Development, Enemies: Konstantin Windisch
