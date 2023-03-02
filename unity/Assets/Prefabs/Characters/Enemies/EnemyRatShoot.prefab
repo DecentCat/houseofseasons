@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7804953557101016578}
   - component: {fileID: 7804953557101016577}
   - component: {fileID: 1495566191289849771}
+  - component: {fileID: 1192860605062541948}
   m_Layer: 7
   m_Name: EnemyRatShoot
   m_TagString: Enemy
@@ -168,6 +169,24 @@ MonoBehaviour:
   attackDistance: 4
   attackPower: 5
   rend: {fileID: 7804953557101016581}
+--- !u!114 &1192860605062541948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7804953557101016584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bed7dedda7d5dbc4a817750b12844114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _possiblePickups:
+  - {fileID: 3785157349671357038, guid: 7ca08b3e1dc8a0d45a0e786640499b3c, type: 3}
+  - {fileID: 3785157349671357038, guid: 9164fddbf83a2a448ab3b5af121882de, type: 3}
+  - {fileID: 3785157349671357038, guid: 5df1403d929c9a548b1654f74307c2ab, type: 3}
+  - {fileID: 3785157349671357038, guid: 21b2a4c933e65834eab0d38b5e5c66fb, type: 3}
+  - {fileID: 3785157349671357038, guid: 05042db35c0131d4c816c864125f89d5, type: 3}
 --- !u!1001 &7804953556592893067
 PrefabInstance:
   m_ObjectHideFlags: 0

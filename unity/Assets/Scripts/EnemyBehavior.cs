@@ -165,6 +165,11 @@ public class EnemyBehavior : MonoBehaviour
 
         if (health <= 0)
         {
+            RandomItemPickup itemPickup;
+            if(gameObject.TryGetComponent<RandomItemPickup>(out itemPickup))
+            {
+                itemPickup.PlacePickup(false);
+            }
             Destroy(gameObject);
         }
 

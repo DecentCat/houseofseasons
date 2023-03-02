@@ -26,6 +26,7 @@ public class ShotScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         TilemapCollider2D collider2D;
+        RandomItemPickup itemPickup;
         if(collision.gameObject.TryGetComponent<TilemapCollider2D>(out collider2D))
         {
             Destroy(gameObject);
@@ -40,11 +41,10 @@ public class ShotScript : MonoBehaviour
             Destroy(gameObject);
             collision.gameObject.GetComponent<PlayerScript>().TakeDamage(dealtDamage, movementDirection);
         }
-        RandomItemPickup itemPickup;
-        if(collision.gameObject.TryGetComponent<RandomItemPickup>(out itemPickup))
+        else if(collision.gameObject.tag != "Enemy" && collision.gameObject.TryGetComponent<RandomItemPickup>(out itemPickup))
         {
             Destroy(gameObject);
-            itemPickup.OpenBox();
+            itemPickup.PlacePickup(true);
         }
     }
 
